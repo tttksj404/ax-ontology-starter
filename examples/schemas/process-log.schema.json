@@ -1,0 +1,82 @@
+{
+  "$defs": {
+    "ProcessEvent": {
+      "additionalProperties": false,
+      "properties": {
+        "case_id": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Case Id",
+          "type": "string"
+        },
+        "step_id": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Step Id",
+          "type": "string"
+        },
+        "owner": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Owner",
+          "type": "string"
+        },
+        "received_at": {
+          "format": "date-time",
+          "title": "Received At",
+          "type": "string"
+        },
+        "started_at": {
+          "format": "date-time",
+          "title": "Started At",
+          "type": "string"
+        },
+        "completed_at": {
+          "format": "date-time",
+          "title": "Completed At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "case_id",
+        "step_id",
+        "owner",
+        "received_at",
+        "started_at",
+        "completed_at"
+      ],
+      "title": "ProcessEvent",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "source": {
+      "title": "Source",
+      "type": "string"
+    },
+    "synthetic": {
+      "title": "Synthetic",
+      "type": "boolean"
+    },
+    "events": {
+      "items": {
+        "$ref": "#/$defs/ProcessEvent"
+      },
+      "maxItems": 10000,
+      "minItems": 1,
+      "title": "Events",
+      "type": "array"
+    }
+  },
+  "required": [
+    "source",
+    "synthetic",
+    "events"
+  ],
+  "title": "ProcessLog",
+  "type": "object"
+}

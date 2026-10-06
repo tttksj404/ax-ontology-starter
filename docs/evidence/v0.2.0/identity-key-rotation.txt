@@ -1,0 +1,10 @@
+OIDC pinned-key rotation and file fail-closed evidence
+Date: 2026-10-02
+
+Command:
+uv run pytest -q tests/test_oidc.py::test_key_rotation_uses_only_current_pinned_jwks tests/test_oidc.py::test_file_reload_fails_closed_after_removal_or_partial_write
+
+..                                                                       [100%]
+2 passed in 0.47s
+
+exit code 0

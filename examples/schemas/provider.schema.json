@@ -1,0 +1,84 @@
+{
+  "$defs": {
+    "ProviderMode": {
+      "enum": [
+        "offline",
+        "local",
+        "private_gateway",
+        "cloud_gateway"
+      ],
+      "title": "ProviderMode",
+      "type": "string"
+    },
+    "Sensitivity": {
+      "enum": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "title": "Sensitivity",
+      "type": "integer"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "mode": {
+      "$ref": "#/$defs/ProviderMode",
+      "default": "offline"
+    },
+    "endpoint": {
+      "anyOf": [
+        {
+          "maxLength": 500,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Endpoint"
+    },
+    "model": {
+      "anyOf": [
+        {
+          "maxLength": 120,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Model"
+    },
+    "approved_hosts": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 10,
+      "title": "Approved Hosts",
+      "type": "array"
+    },
+    "egress_approved": {
+      "default": false,
+      "title": "Egress Approved",
+      "type": "boolean"
+    },
+    "minimum_query_sensitivity": {
+      "$ref": "#/$defs/Sensitivity",
+      "default": 2
+    },
+    "max_prompt_bytes": {
+      "default": 64000,
+      "maximum": 128000,
+      "minimum": 1000,
+      "title": "Max Prompt Bytes",
+      "type": "integer"
+    }
+  },
+  "title": "ProviderConfig",
+  "type": "object"
+}

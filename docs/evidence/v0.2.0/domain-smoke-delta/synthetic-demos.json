@@ -1,0 +1,44 @@
+[
+    {
+        "domain":  "procurement",
+        "assessment_steps":  6,
+        "answer_mode":  "extractive",
+        "evidence_ids":  [
+                             "sop-1"
+                         ],
+        "execution_version":  2,
+        "duplicate_execution_same_result":  true,
+        "rollback_version":  3,
+        "audit_events":  4,
+        "audit_intact":  true,
+        "passed":  true
+    },
+    {
+        "domain":  "support",
+        "assessment_steps":  6,
+        "answer_mode":  "extractive",
+        "evidence_ids":  [
+                             "sop-1"
+                         ],
+        "execution_version":  2,
+        "duplicate_execution_same_result":  true,
+        "rollback_version":  3,
+        "audit_events":  4,
+        "audit_intact":  true,
+        "passed":  true
+    },
+    {
+        "domain":  "hr",
+        "assessment_steps":  6,
+        "answer_mode":  "extractive",
+        "evidence_ids":  [
+                             "sop-1"
+                         ],
+        "execution_version":  2,
+        "duplicate_execution_same_result":  true,
+        "rollback_version":  3,
+        "audit_events":  4,
+        "audit_intact":  true,
+        "passed":  true
+    }
+]

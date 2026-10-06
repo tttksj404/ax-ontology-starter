@@ -1,0 +1,20 @@
+{
+  "synthetic_only": true,
+  "method": "actual subprocess with provider_client fault injection; no production source edits",
+  "sentinel_value_in_report": false,
+  "passed": true,
+  "results": [
+    {
+      "mode": "unsafe_show_locals_enabled",
+      "returncode": 1,
+      "traceback_observed": true,
+      "synthetic_sentinel_exposed": true
+    },
+    {
+      "mode": "actual_default",
+      "returncode": 1,
+      "traceback_observed": true,
+      "synthetic_sentinel_exposed": false
+    }
+  ]
+}

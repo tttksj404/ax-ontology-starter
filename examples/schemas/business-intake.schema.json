@@ -1,0 +1,343 @@
+{
+  "$defs": {
+    "DecisionImpact": {
+      "enum": [
+        "administrative",
+        "financial",
+        "personal_rights",
+        "safety",
+        "unknown"
+      ],
+      "title": "DecisionImpact",
+      "type": "string"
+    },
+    "Risk": {
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "title": "Risk",
+      "type": "string"
+    },
+    "Sensitivity": {
+      "enum": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "title": "Sensitivity",
+      "type": "integer"
+    },
+    "SourceStatus": {
+      "enum": [
+        "observed",
+        "documented",
+        "reported",
+        "unknown"
+      ],
+      "title": "SourceStatus",
+      "type": "string"
+    },
+    "Step": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "owner": {
+          "anyOf": [
+            {
+              "maxLength": 120,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Owner"
+        },
+        "inputs": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Inputs",
+          "type": "array"
+        },
+        "outputs": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Outputs",
+          "type": "array"
+        },
+        "systems": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Systems",
+          "type": "array"
+        },
+        "rules": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 30,
+          "title": "Rules",
+          "type": "array"
+        },
+        "exceptions": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 30,
+          "title": "Exceptions",
+          "type": "array"
+        },
+        "evidence_sources": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Evidence Sources",
+          "type": "array"
+        },
+        "depends_on": {
+          "default": [],
+          "items": {
+            "maxLength": 96,
+            "minLength": 1,
+            "pattern": "^[\\w.-]+$",
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Depends On",
+          "type": "array"
+        },
+        "monthly_cases": {
+          "anyOf": [
+            {
+              "maximum": 10000000,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Monthly Cases"
+        },
+        "minutes_per_case": {
+          "anyOf": [
+            {
+              "maximum": 100000,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minutes Per Case"
+        },
+        "repetitive": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Repetitive"
+        },
+        "digital_readiness": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Digital Readiness"
+        },
+        "rule_clarity": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rule Clarity"
+        },
+        "exception_rate": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Exception Rate"
+        },
+        "risk": {
+          "$ref": "#/$defs/Risk",
+          "default": "critical"
+        },
+        "sensitivity": {
+          "$ref": "#/$defs/Sensitivity",
+          "default": 3
+        },
+        "authorized": {
+          "default": false,
+          "title": "Authorized",
+          "type": "boolean"
+        },
+        "reversible": {
+          "default": false,
+          "title": "Reversible",
+          "type": "boolean"
+        },
+        "kpi": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Kpi"
+        },
+        "evidence_status": {
+          "$ref": "#/$defs/SourceStatus",
+          "default": "unknown"
+        },
+        "value_status": {
+          "$ref": "#/$defs/SourceStatus",
+          "default": "unknown"
+        },
+        "control_point": {
+          "default": true,
+          "title": "Control Point",
+          "type": "boolean"
+        },
+        "decision_impact": {
+          "$ref": "#/$defs/DecisionImpact",
+          "default": "unknown"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "title": "Step",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "business": {
+      "maxLength": 200,
+      "minLength": 1,
+      "title": "Business",
+      "type": "string"
+    },
+    "objective": {
+      "maxLength": 500,
+      "minLength": 1,
+      "title": "Objective",
+      "type": "string"
+    },
+    "process_owner": {
+      "anyOf": [
+        {
+          "maxLength": 120,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Process Owner"
+    },
+    "industry": {
+      "maxLength": 120,
+      "minLength": 1,
+      "title": "Industry",
+      "type": "string"
+    },
+    "constraints": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 30,
+      "title": "Constraints",
+      "type": "array"
+    },
+    "steps": {
+      "items": {
+        "$ref": "#/$defs/Step"
+      },
+      "maxItems": 100,
+      "minItems": 1,
+      "title": "Steps",
+      "type": "array"
+    }
+  },
+  "required": [
+    "business",
+    "objective",
+    "industry",
+    "constraints",
+    "steps"
+  ],
+  "title": "BusinessIntake",
+  "type": "object"
+}

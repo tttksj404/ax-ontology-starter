@@ -1,0 +1,4 @@
+DOMAIN_SMOKE_PASSED domain=procurement audit=True idempotent=True
+DOMAIN_SMOKE_PASSED domain=support audit=True idempotent=True
+DOMAIN_SMOKE_PASSED domain=hr audit=True idempotent=True
+DOMAIN_EVIDENCE_COLLECTED domains=3 sha256=ba086f4b80d353f62a39ca932092a1cc1a1923f199e4d59ea62074729d628904

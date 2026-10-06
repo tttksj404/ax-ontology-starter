@@ -1,0 +1,203 @@
+[
+    {
+        "domain":  "procurement",
+        "result":  {
+                       "synthetic":  true,
+                       "case_count":  6,
+                       "recall_at_k":  1.0,
+                       "exact_citation_rate":  1.0,
+                       "unexpected_documents":  0,
+                       "passed":  true,
+                       "cases":  [
+                                     {
+                                         "id":  "operator-sop",
+                                         "passed":  true,
+                                         "recall":  1.0,
+                                         "citation_exact":  true,
+                                         "denied":  false,
+                                         "unexpected_documents":  0,
+                                         "failure_code":  null
+                                     },
+                                     {
+                                         "id":  "no-graph",
+                                         "passed":  true,
+                                         "recall":  1.0,
+                                         "citation_exact":  true,
+                                         "denied":  false,
+                                         "unexpected_documents":  0,
+                                         "failure_code":  null
+                                     },
+                                     {
+                                         "id":  "foreign-object",
+                                         "passed":  true,
+                                         "recall":  1.0,
+                                         "citation_exact":  true,
+                                         "denied":  true,
+                                         "unexpected_documents":  0,
+                                         "failure_code":  null
+                                     },
+                                     {
+                                         "id":  "restricted-object",
+                                         "passed":  true,
+                                         "recall":  1.0,
+                                         "citation_exact":  true,
+                                         "denied":  true,
+                                         "unexpected_documents":  0,
+                                         "failure_code":  null
+                                     },
+                                     {
+                                         "id":  "outsider-sop",
+                                         "passed":  true,
+                                         "recall":  1.0,
+                                         "citation_exact":  true,
+                                         "denied":  false,
+                                         "unexpected_documents":  0,
+                                         "failure_code":  null
+                                     },
+                                     {
+                                         "id":  "unknown-query",
+                                         "passed":  true,
+                                         "recall":  1.0,
+                                         "citation_exact":  true,
+                                         "denied":  false,
+                                         "unexpected_documents":  0,
+                                         "failure_code":  null
+                                     }
+                                 ]
+                   }
+    },
+    {
+        "domain":  "support",
+        "result":  {
+                       "synthetic":  true,
+                       "case_count":  6,
+                       "recall_at_k":  1.0,
+                       "exact_citation_rate":  1.0,
+                       "unexpected_documents":  0,
+                       "passed":  true,
+                       "cases":  [
+                                     {
+                                         "id":  "operator-sop",
+                                         "passed":  true,
+                                         "recall":  1.0,
+                                         "citation_exact":  true,
+                                         "denied":  false,
+                                         "unexpected_documents":  0,
+                                         "failure_code":  null
+                                     },
+                                     {
+                                         "id":  "no-graph",
+                                         "passed":  true,
+                                         "recall":  1.0,
+                                         "citation_exact":  true,
+                                         "denied":  false,
+                                         "unexpected_documents":  0,
+                                         "failure_code":  null
+                                     },
+                                     {
+                                         "id":  "foreign-object",
+                                         "passed":  true,
+                                         "recall":  1.0,
+                                         "citation_exact":  true,
+                                         "denied":  true,
+                                         "unexpected_documents":  0,
+                                         "failure_code":  null
+                                     },
+                                     {
+                                         "id":  "restricted-object",
+                                         "passed":  true,
+                                         "recall":  1.0,
+                                         "citation_exact":  true,
+                                         "denied":  true,
+                                         "unexpected_documents":  0,
+                                         "failure_code":  null
+                                     },
+                                     {
+                                         "id":  "outsider-sop",
+                                         "passed":  true,
+                                         "recall":  1.0,
+                                         "citation_exact":  true,
+                                         "denied":  false,
+                                         "unexpected_documents":  0,
+                                         "failure_code":  null
+                                     },
+                                     {
+                                         "id":  "unknown-query",
+                                         "passed":  true,
+                                         "recall":  1.0,
+                                         "citation_exact":  true,
+                                         "denied":  false,
+                                         "unexpected_documents":  0,
+                                         "failure_code":  null
+                                     }
+                                 ]
+                   }
+    },
+    {
+        "domain":  "hr",
+        "result":  {
+                       "synthetic":  true,
+                       "case_count":  6,
+                       "recall_at_k":  1.0,
+                       "exact_citation_rate":  1.0,
+                       "unexpected_documents":  0,
+                       "passed":  true,
+                       "cases":  [
+                                     {
+                                         "id":  "operator-sop",
+                                         "passed":  true,
+                                         "recall":  1.0,
+                                         "citation_exact":  true,
+                                         "denied":  false,
+                                         "unexpected_documents":  0,
+                                         "failure_code":  null
+                                     },
+                                     {
+                                         "id":  "no-graph",
+                                         "passed":  true,
+                                         "recall":  1.0,
+                                         "citation_exact":  true,
+                                         "denied":  false,
+                                         "unexpected_documents":  0,
+                                         "failure_code":  null
+                                     },
+                                     {
+                                         "id":  "foreign-object",
+                                         "passed":  true,
+                                         "recall":  1.0,
+                                         "citation_exact":  true,
+                                         "denied":  true,
+                                         "unexpected_documents":  0,
+                                         "failure_code":  null
+                                     },
+                                     {
+                                         "id":  "restricted-object",
+                                         "passed":  true,
+                                         "recall":  1.0,
+                                         "citation_exact":  true,
+                                         "denied":  true,
+                                         "unexpected_documents":  0,
+                                         "failure_code":  null
+                                     },
+                                     {
+                                         "id":  "outsider-sop",
+                                         "passed":  true,
+                                         "recall":  1.0,
+                                         "citation_exact":  true,
+                                         "denied":  false,
+                                         "unexpected_documents":  0,
+                                         "failure_code":  null
+                                     },
+                                     {
+                                         "id":  "unknown-query",
+                                         "passed":  true,
+                                         "recall":  1.0,
+                                         "citation_exact":  true,
+                                         "denied":  false,
+                                         "unexpected_documents":  0,
+                                         "failure_code":  null
+                                     }
+                                 ]
+                   }
+    }
+]

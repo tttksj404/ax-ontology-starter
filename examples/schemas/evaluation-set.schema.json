@@ -1,0 +1,162 @@
+{
+  "$defs": {
+    "EvaluationCase": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "tenant": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Tenant",
+          "type": "string"
+        },
+        "subject": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Subject",
+          "type": "string"
+        },
+        "query": {
+          "$ref": "#/$defs/Query"
+        },
+        "expected_documents": {
+          "items": {
+            "maxLength": 96,
+            "minLength": 1,
+            "pattern": "^[\\w.-]+$",
+            "type": "string"
+          },
+          "title": "Expected Documents",
+          "type": "array"
+        },
+        "expected_denial": {
+          "default": false,
+          "title": "Expected Denial",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "tenant",
+        "subject",
+        "query",
+        "expected_documents"
+      ],
+      "title": "EvaluationCase",
+      "type": "object"
+    },
+    "Purpose": {
+      "enum": [
+        "operations",
+        "audit"
+      ],
+      "title": "Purpose",
+      "type": "string"
+    },
+    "Query": {
+      "additionalProperties": false,
+      "properties": {
+        "question": {
+          "maxLength": 2000,
+          "minLength": 2,
+          "title": "Question",
+          "type": "string"
+        },
+        "purpose": {
+          "$ref": "#/$defs/Purpose",
+          "default": "operations"
+        },
+        "object_id": {
+          "anyOf": [
+            {
+              "maxLength": 96,
+              "minLength": 1,
+              "pattern": "^[\\w.-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Object Id"
+        },
+        "top_k": {
+          "default": 4,
+          "maximum": 10,
+          "minimum": 1,
+          "title": "Top K",
+          "type": "integer"
+        },
+        "hops": {
+          "default": 1,
+          "maximum": 2,
+          "minimum": 0,
+          "title": "Hops",
+          "type": "integer"
+        },
+        "sensitivity": {
+          "$ref": "#/$defs/Sensitivity",
+          "default": 2
+        },
+        "generate": {
+          "default": false,
+          "title": "Generate",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "question"
+      ],
+      "title": "Query",
+      "type": "object"
+    },
+    "Sensitivity": {
+      "enum": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "title": "Sensitivity",
+      "type": "integer"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "synthetic": {
+      "title": "Synthetic",
+      "type": "boolean"
+    },
+    "cases": {
+      "items": {
+        "$ref": "#/$defs/EvaluationCase"
+      },
+      "maxItems": 500,
+      "minItems": 1,
+      "title": "Cases",
+      "type": "array"
+    },
+    "minimum_recall": {
+      "default": 0.9,
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Minimum Recall",
+      "type": "number"
+    }
+  },
+  "required": [
+    "synthetic",
+    "cases"
+  ],
+  "title": "EvaluationSet",
+  "type": "object"
+}

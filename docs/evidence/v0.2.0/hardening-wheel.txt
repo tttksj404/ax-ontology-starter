@@ -1,0 +1,29 @@
+powershell.exe : Building source distribution...
+At C:\Users\SSAFY\.codex\skills\token-quality-engine\scripts\invoke.ps1:176 char:13
++             & powershell.exe -NoProfile -NonInteractive -EncodedComma ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Building source distribution...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Building wheel from source distribution...
+Successfully built dist\ax_ontology_starter-0.2.0.tar.gz
+Successfully built dist\ax_ontology_starter-0.2.0-py3-none-any.whl
+Installed 35 packages in 434ms
+WHEEL_RUNTIME_CONFIG_VERIFIED
+{
+  "domain": "support",
+  "assessment_steps": 6,
+  "answer_mode": "extractive",
+  "evidence_ids": [
+    "sop-1"
+  ],
+  "execution_version": 2,
+  "duplicate_execution_same_result": true,
+  "rollback_version": 3,
+  "audit_events": 4,
+  "audit_intact": true,
+  "passed": true
+}
+V02_WHEEL_SMOKE_PASSED version=0.2.0 local_http_cli_restart=verified
+V02_HARDENING_SMOKE_PASSED write_acl_replay_drift_cleanup=verified
+AX_PACKAGE_CHECK_PASSED

@@ -1,0 +1,259 @@
+{
+  "id": "procurement-demo",
+  "version": "1.0.0",
+  "description": "구매 요청 검토: 실제 개인정보가 없는 합성 도메인팩",
+  "object_types": [
+    {
+      "id": "PurchaseRequest",
+      "label": "구매 요청 검토",
+      "properties": [
+        {
+          "key": "status",
+          "kind": "text",
+          "required": true,
+          "sensitivity": 1
+        },
+        {
+          "key": "summary",
+          "kind": "text",
+          "required": true,
+          "sensitivity": 1
+        }
+      ],
+      "minimum_sensitivity": 1
+    },
+    {
+      "id": "Procedure",
+      "label": "업무 절차",
+      "properties": [
+        {
+          "key": "summary",
+          "kind": "text",
+          "required": true,
+          "sensitivity": 1
+        }
+      ],
+      "minimum_sensitivity": 1
+    }
+  ],
+  "link_types": [
+    {
+      "id": "governed_by",
+      "source_type": "PurchaseRequest",
+      "target_type": "Procedure"
+    }
+  ],
+  "action_types": [
+    {
+      "id": "mark_reviewed",
+      "handler": "set_status",
+      "object_type": "PurchaseRequest",
+      "property": "status",
+      "transitions": [
+        {
+          "before": "submitted",
+          "after": "reviewed"
+        }
+      ],
+      "requires_approval": true,
+      "reversible": true
+    }
+  ],
+  "objects": [
+    {
+      "id": "request-1",
+      "type": "PurchaseRequest",
+      "label": "구매 요청 검토",
+      "access": {
+        "tenant": "acme",
+        "groups": [
+          "procurement"
+        ],
+        "sensitivity": 1,
+        "purposes": [
+          "audit",
+          "operations"
+        ]
+      },
+      "properties": [
+        {
+          "key": "status",
+          "value": "submitted"
+        },
+        {
+          "key": "summary",
+          "value": "합성 업무 사례"
+        }
+      ],
+      "version": 1,
+      "source": "synthetic:request-1"
+    },
+    {
+      "id": "procedure-1",
+      "type": "Procedure",
+      "label": "표준 운영 절차",
+      "access": {
+        "tenant": "acme",
+        "groups": [
+          "procurement"
+        ],
+        "sensitivity": 1,
+        "purposes": [
+          "audit",
+          "operations"
+        ]
+      },
+      "properties": [
+        {
+          "key": "summary",
+          "value": "검토 절차"
+        }
+      ],
+      "version": 1,
+      "source": "synthetic:procedure-1"
+    },
+    {
+      "id": "beta-request",
+      "type": "PurchaseRequest",
+      "label": "다른 테넌트의 합성 요청",
+      "access": {
+        "tenant": "beta",
+        "groups": [
+          "procurement"
+        ],
+        "sensitivity": 1,
+        "purposes": [
+          "audit",
+          "operations"
+        ]
+      },
+      "properties": [
+        {
+          "key": "status",
+          "value": "submitted"
+        },
+        {
+          "key": "summary",
+          "value": "합성 업무 사례"
+        }
+      ],
+      "version": 1,
+      "source": "synthetic:beta"
+    },
+    {
+      "id": "restricted-case",
+      "type": "PurchaseRequest",
+      "label": "접근 제한 합성 기록",
+      "access": {
+        "tenant": "acme",
+        "groups": [
+          "private-board"
+        ],
+        "sensitivity": 3,
+        "purposes": [
+          "audit",
+          "operations"
+        ]
+      },
+      "properties": [
+        {
+          "key": "status",
+          "value": "submitted"
+        },
+        {
+          "key": "summary",
+          "value": "합성 업무 사례"
+        }
+      ],
+      "version": 1,
+      "source": "synthetic:restricted"
+    }
+  ],
+  "links": [
+    {
+      "id": "request-policy",
+      "type": "governed_by",
+      "source_id": "request-1",
+      "target_id": "procedure-1",
+      "access": {
+        "tenant": "acme",
+        "groups": [
+          "procurement"
+        ],
+        "sensitivity": 1,
+        "purposes": [
+          "audit",
+          "operations"
+        ]
+      }
+    }
+  ],
+  "documents": [
+    {
+      "id": "sop-1",
+      "object_ids": [
+        "procedure-1"
+      ],
+      "title": "검토 운영 절차",
+      "text": "구매요청은 품목·수량과 재고를 확인한 뒤 reviewed 상태로 기록합니다. 발주·지급은 별도의 사람 승인과 ERP 절차를 따릅니다.",
+      "source_uri": "synthetic://sop/review",
+      "source_version": "1",
+      "access": {
+        "tenant": "acme",
+        "groups": [
+          "procurement"
+        ],
+        "sensitivity": 1,
+        "purposes": [
+          "audit",
+          "operations"
+        ]
+      },
+      "valid_until": "2027-10-01T09:13:25.986513Z"
+    },
+    {
+      "id": "beta-doc",
+      "object_ids": [
+        "beta-request"
+      ],
+      "title": "검토 절차",
+      "text": "BETA_SENTINEL 합성 타사 기밀",
+      "source_uri": "synthetic://beta",
+      "source_version": "1",
+      "access": {
+        "tenant": "beta",
+        "groups": [
+          "procurement"
+        ],
+        "sensitivity": 1,
+        "purposes": [
+          "audit",
+          "operations"
+        ]
+      },
+      "valid_until": "2027-10-01T09:13:25.986513Z"
+    },
+    {
+      "id": "restricted-doc",
+      "object_ids": [
+        "restricted-case"
+      ],
+      "title": "검토 절차",
+      "text": "RESTRICTED_SENTINEL 합성 접근제한 기록",
+      "source_uri": "synthetic://restricted",
+      "source_version": "1",
+      "access": {
+        "tenant": "acme",
+        "groups": [
+          "private-board"
+        ],
+        "sensitivity": 3,
+        "purposes": [
+          "audit",
+          "operations"
+        ]
+      },
+      "valid_until": "2027-10-01T09:13:25.986513Z"
+    }
+  ]
+}

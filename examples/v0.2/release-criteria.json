@@ -1,0 +1,10 @@
+{
+  "minimum_quality": 0.9,
+  "maximum_quality_regression": 0.0,
+  "maximum_unnecessary_refusal_rate": 0.1,
+  "maximum_refusal_rate_increase": 0.0,
+  "maximum_mean_latency_ms": 100.0,
+  "maximum_latency_increase_ms": 10.0,
+  "maximum_mean_cost": 1.0,
+  "maximum_cost_increase": 0.1
+}

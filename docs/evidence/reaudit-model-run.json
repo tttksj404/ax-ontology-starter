@@ -1,0 +1,16 @@
+{
+    "phase":  "implementation-reaudit",
+    "requested_model":  "claude-opus-5-5",
+    "requested_effort":  "max",
+    "effort_evidence":  "scripts/run-opus.ps1 fixed invocation argument; not echoed by modelUsage",
+    "observed_models":  [
+                            "claude-opus-5-5"
+                        ],
+    "is_error":  false,
+    "verdict":  "PASS",
+    "duration_ms":  1059789,
+    "raw_result_sha256":  "37f3801bffe619a1eb7e6c2ef86c8b1c5037a1a98258961d47ba8acd04e98870",
+    "source_manifest_sha256":  "6000a1ade8b9ff39b5d3631c31b16c7c61d2bba58a52223202a3c64bb6624975",
+    "prompt_sha256":  "36b9577c715aeed3014d7977667e2db50f026185d2d28b7da5f505e2e97e7c6f",
+    "review_method":  "static supplied-source review; executor ran verification independently"
+}

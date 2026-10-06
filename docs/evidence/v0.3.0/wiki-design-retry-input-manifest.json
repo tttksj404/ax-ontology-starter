@@ -1,0 +1,42 @@
+[
+    {
+        "path":  "docs/evidence/v0.3.0/user-request.md",
+        "sha256":  "3be102d5ea949d30abf256a3b466eb1a5daa9b239191256c8556ae06bfbd8c96",
+        "bytes":  802
+    },
+    {
+        "path":  "docs/WORK_PLAN_v0.3.md",
+        "sha256":  "fee97e32202574d334567f027b5407285e9cb65905c9190ccbc17a60935e6e11",
+        "bytes":  2879
+    },
+    {
+        "path":  "docs/V03_GUIDE.md",
+        "sha256":  "94f03d5a0731db13b128ebbd65ce4d096a9ef3a73dfb44c781595ac7a45f1a9e",
+        "bytes":  7260
+    },
+    {
+        "path":  "docs/LLM_WIKI_GUIDE.md",
+        "sha256":  "3dfc01da98cb69fcc181fe26518388cd904dbe9d24a82c452c6cd6172a8e55dc",
+        "bytes":  27687
+    },
+    {
+        "path":  "src/ax_starter/wiki_contracts.py",
+        "sha256":  "5b5ba5504a8aa8da70a60271636744f359d3d0dabb52050d204082312bbd3323",
+        "bytes":  5892
+    },
+    {
+        "path":  "src/ax_starter/providers.py",
+        "sha256":  "dfcc8898cc5fa16799e36eabd71b2bed6a9dd585393d38ea1f00146821ae03d9",
+        "bytes":  5130
+    },
+    {
+        "path":  "src/ax_starter/evidence_roles.py",
+        "sha256":  "666e367ce77d1715adfd42276ec167d85a83b82a352d80046f7b80a68bd8c30b",
+        "bytes":  363
+    },
+    {
+        "path":  "src/ax_starter/evidence_policy.py",
+        "sha256":  "9fa5f5e46aa113ce310b177a0efaf46ee109ac48551a2183b1ad4916b68065e1",
+        "bytes":  703
+    }
+]

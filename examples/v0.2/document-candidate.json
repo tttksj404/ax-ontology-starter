@@ -1,0 +1,25 @@
+{
+  "document_id": "synthetic-tenant.support-record-1",
+  "tenant": "synthetic-tenant",
+  "origin": {
+    "identifier": "synthetic-source",
+    "uri": "memory://support-records"
+  },
+  "source_version": "source-v1",
+  "object_scope": ["support-record"],
+  "access": {
+    "tenant": "synthetic-tenant",
+    "groups": ["operators"],
+    "sensitivity": 1,
+    "purposes": ["operations"]
+  },
+  "content": "{\"record\":\"synthetic\"}",
+  "declared_sha256": "4b9da2553dc2dcf29b0cc02b03fd6e07c268485c11716d77ef48ffcf6cdaf389",
+  "provenance": [
+    {
+      "source_identifier": "synthetic-source",
+      "record_identifier": "source-record-1",
+      "content_sha256": "4b9da2553dc2dcf29b0cc02b03fd6e07c268485c11716d77ef48ffcf6cdaf389"
+    }
+  ]
+}

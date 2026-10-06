@@ -1,0 +1,32 @@
+{
+    "schema":  "ax-post-audit-index/v1",
+    "version":  "0.3.0",
+    "revision":  3,
+    "scope":  "New release notes and separate source-binding closure after the frozen audit. Original audit inputs remain byte-identical.",
+    "release_notes":  "docs/V03_RELEASE.md",
+    "release_notes_sha256":  "f9b37c00a45a5fcd0ac71af4f95a5fb3d7be85eab6c73a98c217cda33d8dfc71",
+    "tested_manifest_sha256":  "a82dab5666b1167e0f05bcd57853646823f42c4e065710bcd8696c4f484621d8",
+    "audit_manifest_sha256":  "249fb15a40b9f5265b79a364c3b160bed6235ca9f77728e03413000e36b715dd",
+    "opus_public_sha256":  "2336516a1550fcfe5a4881d7ce94c349c52dbed190b26307fd99916d9bf03a4c",
+    "independent_report_sha256":  "7fd740cb62f33802a5295dde06f53365df4eeb85e1b387716e0a07c85107288f",
+    "evidence":  [
+                     {
+                         "capsule_id":  "20261006-112243443-209a477d",
+                         "raw_sha256":  "c4c7f35cb1f30468e55b1b8df15c2014329ec4d1732c0c11cb8fec94c86d5823",
+                         "exit_code":  0,
+                         "hash_verified":  true,
+                         "manual_inspection_required":  false,
+                         "delivered_log":  "docs/evidence/v0.3.0/revision-3/post-audit-source-bindings.txt",
+                         "delivered_sha256":  "666f27540ce2a26498afad197bdc1b6cc59239d22adf77d35a6da89e3a1d2698"
+                     },
+                     {
+                         "capsule_id":  "20261006-112737594-e6ac4b7c",
+                         "raw_sha256":  "966e63e9af5ee02a6dbb9a19c7220ce1b1d9638acc37e7f8f806128a2a5be312",
+                         "exit_code":  0,
+                         "hash_verified":  true,
+                         "manual_inspection_required":  false,
+                         "delivered_log":  "docs/evidence/v0.3.0/revision-3/post-audit-documentation-links.txt",
+                         "delivered_sha256":  "6dcf1c2f4bae0ff517e62a4e420388c3dcaf2c051229b2c0f095652f94463d87"
+                     }
+                 ]
+}

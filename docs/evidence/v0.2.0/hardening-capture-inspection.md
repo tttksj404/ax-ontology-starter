@@ -1,0 +1,9 @@
+# Hardening capture inspection
+
+2026-10-02. The final checks, 72-file rule check, installed-wheel check and three synthetic domain runs completed with native exit code 0 and their expected success signals. The verification index preserves each original log SHA-256 separately from normalized delivered log hashes.
+
+The installed-wheel log contains a Windows PowerShell 5 native-stderr record labelled `NativeCommandError` for uv's `Building source distribution...` progress message. The complete hash-verified log was read: both distributions built successfully, 35 runtime dependencies installed, runtime configuration verified, both real loopback HTTP smoke helpers completed, and `AX_PACKAGE_CHECK_PASSED` followed. No Python traceback or deprecation warning appears in that final run. The stderr wrapper record is retained in the delivered log; it is not presented as a zero-stderr run.
+
+An earlier smoke attempt failed because the new helper imported development-only `httpx` in the isolated runtime. The original failure is retained privately under TQE `20261002-123552827-d1153ab7`, SHA-256 `fafbd16a6e8aa80d367a78fd355b0fbff83dc803dd8a807b006f3cbf23c03858`. Isolated import probes confirmed `httpx` absent, `httpx2` present and correctly declared by the installed wheel. The helper now imports the declared runtime client and disables environment proxies for synthetic loopback requests. A later deprecated HTTP status name was replaced by `UNPROCESSABLE_CONTENT`. The fresh final installed run above confirms both corrections. Earlier runs are historical evidence, not substituted for the final run.
+
+The final source manifest records all 102 runtime/test Python files plus pyproject, lock and check scripts. It is compared with the later audit input and delivery manifest. Production credentials, private advisor raw response/session metadata, `.omx`, runtime databases and environment/cache folders are excluded from delivery.

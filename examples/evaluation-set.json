@@ -1,0 +1,106 @@
+{
+  "synthetic": true,
+  "cases": [
+    {
+      "id": "operator-sop",
+      "tenant": "acme",
+      "subject": "operator",
+      "query": {
+        "question": "검토 절차",
+        "purpose": "operations",
+        "object_id": "request-1",
+        "top_k": 4,
+        "hops": 1,
+        "sensitivity": 2,
+        "generate": false
+      },
+      "expected_documents": [
+        "sop-1"
+      ],
+      "expected_denial": false
+    },
+    {
+      "id": "no-graph",
+      "tenant": "acme",
+      "subject": "operator",
+      "query": {
+        "question": "검토 절차",
+        "purpose": "operations",
+        "object_id": "request-1",
+        "top_k": 4,
+        "hops": 0,
+        "sensitivity": 2,
+        "generate": false
+      },
+      "expected_documents": [],
+      "expected_denial": false
+    },
+    {
+      "id": "foreign-object",
+      "tenant": "acme",
+      "subject": "operator",
+      "query": {
+        "question": "검토 절차",
+        "purpose": "operations",
+        "object_id": "beta-request",
+        "top_k": 4,
+        "hops": 1,
+        "sensitivity": 2,
+        "generate": false
+      },
+      "expected_documents": [],
+      "expected_denial": true
+    },
+    {
+      "id": "restricted-object",
+      "tenant": "acme",
+      "subject": "operator",
+      "query": {
+        "question": "검토 절차",
+        "purpose": "operations",
+        "object_id": "restricted-case",
+        "top_k": 4,
+        "hops": 1,
+        "sensitivity": 2,
+        "generate": false
+      },
+      "expected_documents": [],
+      "expected_denial": true
+    },
+    {
+      "id": "outsider-sop",
+      "tenant": "beta",
+      "subject": "outsider",
+      "query": {
+        "question": "검토 절차",
+        "purpose": "operations",
+        "object_id": "beta-request",
+        "top_k": 4,
+        "hops": 1,
+        "sensitivity": 2,
+        "generate": false
+      },
+      "expected_documents": [
+        "beta-doc"
+      ],
+      "expected_denial": false
+    },
+    {
+      "id": "unknown-query",
+      "tenant": "acme",
+      "subject": "operator",
+      "query": {
+        "question": "不存在xyz987",
+        "purpose": "operations",
+        "object_id": null,
+        "top_k": 4,
+        "hops": 1,
+        "sensitivity": 2,
+        "generate": false
+      },
+      "expected_documents": [],
+      "expected_denial": false
+    }
+  ],
+  "minimum_recall": 0.9
+}

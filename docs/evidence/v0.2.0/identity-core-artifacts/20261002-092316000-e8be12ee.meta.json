@@ -1,0 +1,23 @@
+﻿{
+    "schema":  "token-quality-artifact/v1",
+    "id":  "20261002-092316000-e8be12ee",
+    "created_at":  "2026-10-02T00:23:16.0002723Z",
+    "shell":  "PowerShell",
+    "working_directory":  "C:\\Users\\SSAFY\\Desktop\\2학기\\ax-ontology-starter",
+    "command_sha256":  "2bdc3eee90fd3626f7aeb58708a88aca15511c2d22b0c90800ce2b03323fcf27",
+    "exit_code":  0,
+    "duration_ms":  2422,
+    "expect_pattern_sha256":  "1e457cca866301cb82dd7f0f8d8e6abafec3f7d0051fff71e2d2bccb2a833ba6",
+    "expect_match_count":  1,
+    "requires_inspection":  false,
+    "inspection_reasons":  [
+
+                           ],
+    "manual_inspection_required":  false,
+    "manual_inspection_reasons":  [
+
+                                  ],
+    "artifact_path":  "C:\\Users\\SSAFY\\Desktop\\2학기\\ax-ontology-starter\\docs\\evidence\\v0.2.0\\identity-core-artifacts\\20261002-092316000-e8be12ee.log",
+    "artifact_bytes":  232,
+    "artifact_sha256":  "6dc72b0cc7b56d75f99dbacefe596e4b2b386ec5b49c0cac6473592193deeaab"
+}

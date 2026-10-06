@@ -1,0 +1,255 @@
+{
+  "business": "구매 요청 검토",
+  "objective": "근거 확인과 검토 기록의 일관성 향상",
+  "process_owner": "합성 업무 책임자",
+  "industry": "procurement",
+  "constraints": [
+    "실제 발주·지급·인사 결정을 자동 실행하지 않음"
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "name": "요청 접수",
+      "owner": "합성 업무 담당자",
+      "inputs": [
+        "업무 요청"
+      ],
+      "outputs": [
+        "요청 접수 기록"
+      ],
+      "systems": [
+        "기존 업무 시스템"
+      ],
+      "rules": [
+        "도메인팩의 승인된 SOP"
+      ],
+      "exceptions": [
+        "근거 누락"
+      ],
+      "evidence_sources": [
+        "sop-1"
+      ],
+      "depends_on": [],
+      "monthly_cases": 100,
+      "minutes_per_case": 5.0,
+      "repetitive": 0.8,
+      "digital_readiness": 0.8,
+      "rule_clarity": 0.8,
+      "exception_rate": 0.1,
+      "risk": "low",
+      "sensitivity": 1,
+      "authorized": true,
+      "reversible": true,
+      "kpi": "처리시간 및 재작업률",
+      "evidence_status": "documented",
+      "value_status": "reported",
+      "control_point": false,
+      "decision_impact": "administrative"
+    },
+    {
+      "id": "step-2",
+      "name": "중복 확인",
+      "owner": "합성 업무 담당자",
+      "inputs": [
+        "step-1의 산출물"
+      ],
+      "outputs": [
+        "중복 확인 기록"
+      ],
+      "systems": [
+        "기존 업무 시스템"
+      ],
+      "rules": [
+        "도메인팩의 승인된 SOP"
+      ],
+      "exceptions": [
+        "근거 누락"
+      ],
+      "evidence_sources": [
+        "sop-1"
+      ],
+      "depends_on": [
+        "step-1"
+      ],
+      "monthly_cases": 100,
+      "minutes_per_case": 7.0,
+      "repetitive": 0.8,
+      "digital_readiness": 0.8,
+      "rule_clarity": 0.8,
+      "exception_rate": 0.1,
+      "risk": "low",
+      "sensitivity": 1,
+      "authorized": true,
+      "reversible": true,
+      "kpi": "처리시간 및 재작업률",
+      "evidence_status": "documented",
+      "value_status": "reported",
+      "control_point": false,
+      "decision_impact": "administrative"
+    },
+    {
+      "id": "step-3",
+      "name": "근거 대조",
+      "owner": "합성 업무 담당자",
+      "inputs": [
+        "step-2의 산출물"
+      ],
+      "outputs": [
+        "근거 대조 기록"
+      ],
+      "systems": [
+        "기존 업무 시스템"
+      ],
+      "rules": [
+        "도메인팩의 승인된 SOP"
+      ],
+      "exceptions": [
+        "근거 누락"
+      ],
+      "evidence_sources": [
+        "sop-1"
+      ],
+      "depends_on": [
+        "step-2"
+      ],
+      "monthly_cases": 100,
+      "minutes_per_case": 9.0,
+      "repetitive": 0.8,
+      "digital_readiness": 0.8,
+      "rule_clarity": 0.8,
+      "exception_rate": 0.1,
+      "risk": "low",
+      "sensitivity": 1,
+      "authorized": true,
+      "reversible": true,
+      "kpi": "처리시간 및 재작업률",
+      "evidence_status": "documented",
+      "value_status": "reported",
+      "control_point": false,
+      "decision_impact": "administrative"
+    },
+    {
+      "id": "step-4",
+      "name": "예외 검토",
+      "owner": "합성 업무 담당자",
+      "inputs": [
+        "step-3의 산출물"
+      ],
+      "outputs": [
+        "예외 검토 기록"
+      ],
+      "systems": [
+        "기존 업무 시스템"
+      ],
+      "rules": [
+        "도메인팩의 승인된 SOP"
+      ],
+      "exceptions": [
+        "근거 누락"
+      ],
+      "evidence_sources": [
+        "sop-1"
+      ],
+      "depends_on": [
+        "step-3"
+      ],
+      "monthly_cases": 100,
+      "minutes_per_case": 11.0,
+      "repetitive": 0.8,
+      "digital_readiness": 0.8,
+      "rule_clarity": 0.8,
+      "exception_rate": 0.1,
+      "risk": "medium",
+      "sensitivity": 1,
+      "authorized": true,
+      "reversible": true,
+      "kpi": "처리시간 및 재작업률",
+      "evidence_status": "documented",
+      "value_status": "reported",
+      "control_point": false,
+      "decision_impact": "administrative"
+    },
+    {
+      "id": "step-5",
+      "name": "최종 결정",
+      "owner": "합성 업무 담당자",
+      "inputs": [
+        "step-4의 산출물"
+      ],
+      "outputs": [
+        "최종 결정 기록"
+      ],
+      "systems": [
+        "기존 업무 시스템"
+      ],
+      "rules": [
+        "도메인팩의 승인된 SOP"
+      ],
+      "exceptions": [
+        "근거 누락"
+      ],
+      "evidence_sources": [
+        "sop-1"
+      ],
+      "depends_on": [
+        "step-4"
+      ],
+      "monthly_cases": 100,
+      "minutes_per_case": 13.0,
+      "repetitive": 0.8,
+      "digital_readiness": 0.8,
+      "rule_clarity": 0.8,
+      "exception_rate": 0.1,
+      "risk": "critical",
+      "sensitivity": 1,
+      "authorized": true,
+      "reversible": false,
+      "kpi": "처리시간 및 재작업률",
+      "evidence_status": "documented",
+      "value_status": "reported",
+      "control_point": true,
+      "decision_impact": "unknown"
+    },
+    {
+      "id": "step-6",
+      "name": "완료 보고",
+      "owner": "합성 업무 담당자",
+      "inputs": [
+        "step-5의 산출물"
+      ],
+      "outputs": [
+        "완료 보고 기록"
+      ],
+      "systems": [
+        "기존 업무 시스템"
+      ],
+      "rules": [
+        "도메인팩의 승인된 SOP"
+      ],
+      "exceptions": [
+        "근거 누락"
+      ],
+      "evidence_sources": [
+        "sop-1"
+      ],
+      "depends_on": [
+        "step-5"
+      ],
+      "monthly_cases": 100,
+      "minutes_per_case": 15.0,
+      "repetitive": 0.8,
+      "digital_readiness": 0.8,
+      "rule_clarity": 0.8,
+      "exception_rate": 0.1,
+      "risk": "low",
+      "sensitivity": 1,
+      "authorized": true,
+      "reversible": true,
+      "kpi": "처리시간 및 재작업률",
+      "evidence_status": "documented",
+      "value_status": "reported",
+      "control_point": false,
+      "decision_impact": "administrative"
+    }
+  ]
+}

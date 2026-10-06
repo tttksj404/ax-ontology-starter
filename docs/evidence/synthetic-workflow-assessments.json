@@ -1,0 +1,293 @@
+[
+    {
+        "domain":  "procurement",
+        "synthetic":  true,
+        "result":  {
+                       "business":  "구매 요청 검토",
+                       "heuristic_version":  "ax-triage-v1",
+                       "measured_roi":  false,
+                       "steps":  [
+                                     {
+                                         "step_id":  "step-1",
+                                         "mode":  "automate_candidate",
+                                         "priority_score":  82.5,
+                                         "baseline_hours_monthly":  null,
+                                         "reasons":  [
+                                                         "점수는 도입 우선순위 휴리스틱이며 절감 효과의 실측값이 아닙니다."
+                                                     ],
+                                         "next_steps":  [
+                                                            "현행 처리시간·오류율의 기준선을 측정합니다.",
+                                                            "예외 사례를 포함한 평가셋으로 그림자 운영합니다."
+                                                        ]
+                                     },
+                                     {
+                                         "step_id":  "step-2",
+                                         "mode":  "automate_candidate",
+                                         "priority_score":  82.5,
+                                         "baseline_hours_monthly":  null,
+                                         "reasons":  [
+                                                         "점수는 도입 우선순위 휴리스틱이며 절감 효과의 실측값이 아닙니다."
+                                                     ],
+                                         "next_steps":  [
+                                                            "현행 처리시간·오류율의 기준선을 측정합니다.",
+                                                            "예외 사례를 포함한 평가셋으로 그림자 운영합니다."
+                                                        ]
+                                     },
+                                     {
+                                         "step_id":  "step-3",
+                                         "mode":  "automate_candidate",
+                                         "priority_score":  82.5,
+                                         "baseline_hours_monthly":  null,
+                                         "reasons":  [
+                                                         "점수는 도입 우선순위 휴리스틱이며 절감 효과의 실측값이 아닙니다."
+                                                     ],
+                                         "next_steps":  [
+                                                            "현행 처리시간·오류율의 기준선을 측정합니다.",
+                                                            "예외 사례를 포함한 평가셋으로 그림자 운영합니다."
+                                                        ]
+                                     },
+                                     {
+                                         "step_id":  "step-4",
+                                         "mode":  "approval_required",
+                                         "priority_score":  67.5,
+                                         "baseline_hours_monthly":  null,
+                                         "reasons":  [
+                                                         "점수는 도입 우선순위 휴리스틱이며 절감 효과의 실측값이 아닙니다."
+                                                     ],
+                                         "next_steps":  [
+                                                            "현행 처리시간·오류율의 기준선을 측정합니다.",
+                                                            "예외 사례를 포함한 평가셋으로 그림자 운영합니다."
+                                                        ]
+                                     },
+                                     {
+                                         "step_id":  "step-5",
+                                         "mode":  "assist",
+                                         "priority_score":  22.5,
+                                         "baseline_hours_monthly":  null,
+                                         "reasons":  [
+                                                         "점수는 도입 우선순위 휴리스틱이며 절감 효과의 실측값이 아닙니다.",
+                                                         "비가역 작업은 사람의 판단과 별도 실행 통제가 필요합니다.",
+                                                         "통제 결정과 금전·권리·안전 영향의 판단은 사람에게 남깁니다."
+                                                     ],
+                                         "next_steps":  [
+                                                            "현행 처리시간·오류율의 기준선을 측정합니다.",
+                                                            "예외 사례를 포함한 평가셋으로 그림자 운영합니다."
+                                                        ]
+                                     },
+                                     {
+                                         "step_id":  "step-6",
+                                         "mode":  "automate_candidate",
+                                         "priority_score":  82.5,
+                                         "baseline_hours_monthly":  null,
+                                         "reasons":  [
+                                                         "점수는 도입 우선순위 휴리스틱이며 절감 효과의 실측값이 아닙니다."
+                                                     ],
+                                         "next_steps":  [
+                                                            "현행 처리시간·오류율의 기준선을 측정합니다.",
+                                                            "예외 사례를 포함한 평가셋으로 그림자 운영합니다."
+                                                        ]
+                                     }
+                                 ],
+                       "control_points":  [
+                                              "step-5"
+                                          ],
+                       "process_warnings":  [
+                                                "처리시간과 대기·인계·재작업을 함께 측정해야 전체 업무의 병목을 판단할 수 있습니다."
+                                            ]
+                   }
+    },
+    {
+        "domain":  "support",
+        "synthetic":  true,
+        "result":  {
+                       "business":  "고객 지원 요청 검토",
+                       "heuristic_version":  "ax-triage-v1",
+                       "measured_roi":  false,
+                       "steps":  [
+                                     {
+                                         "step_id":  "step-1",
+                                         "mode":  "automate_candidate",
+                                         "priority_score":  82.5,
+                                         "baseline_hours_monthly":  null,
+                                         "reasons":  [
+                                                         "점수는 도입 우선순위 휴리스틱이며 절감 효과의 실측값이 아닙니다."
+                                                     ],
+                                         "next_steps":  [
+                                                            "현행 처리시간·오류율의 기준선을 측정합니다.",
+                                                            "예외 사례를 포함한 평가셋으로 그림자 운영합니다."
+                                                        ]
+                                     },
+                                     {
+                                         "step_id":  "step-2",
+                                         "mode":  "automate_candidate",
+                                         "priority_score":  82.5,
+                                         "baseline_hours_monthly":  null,
+                                         "reasons":  [
+                                                         "점수는 도입 우선순위 휴리스틱이며 절감 효과의 실측값이 아닙니다."
+                                                     ],
+                                         "next_steps":  [
+                                                            "현행 처리시간·오류율의 기준선을 측정합니다.",
+                                                            "예외 사례를 포함한 평가셋으로 그림자 운영합니다."
+                                                        ]
+                                     },
+                                     {
+                                         "step_id":  "step-3",
+                                         "mode":  "automate_candidate",
+                                         "priority_score":  82.5,
+                                         "baseline_hours_monthly":  null,
+                                         "reasons":  [
+                                                         "점수는 도입 우선순위 휴리스틱이며 절감 효과의 실측값이 아닙니다."
+                                                     ],
+                                         "next_steps":  [
+                                                            "현행 처리시간·오류율의 기준선을 측정합니다.",
+                                                            "예외 사례를 포함한 평가셋으로 그림자 운영합니다."
+                                                        ]
+                                     },
+                                     {
+                                         "step_id":  "step-4",
+                                         "mode":  "approval_required",
+                                         "priority_score":  67.5,
+                                         "baseline_hours_monthly":  null,
+                                         "reasons":  [
+                                                         "점수는 도입 우선순위 휴리스틱이며 절감 효과의 실측값이 아닙니다."
+                                                     ],
+                                         "next_steps":  [
+                                                            "현행 처리시간·오류율의 기준선을 측정합니다.",
+                                                            "예외 사례를 포함한 평가셋으로 그림자 운영합니다."
+                                                        ]
+                                     },
+                                     {
+                                         "step_id":  "step-5",
+                                         "mode":  "assist",
+                                         "priority_score":  22.5,
+                                         "baseline_hours_monthly":  null,
+                                         "reasons":  [
+                                                         "점수는 도입 우선순위 휴리스틱이며 절감 효과의 실측값이 아닙니다.",
+                                                         "비가역 작업은 사람의 판단과 별도 실행 통제가 필요합니다.",
+                                                         "통제 결정과 금전·권리·안전 영향의 판단은 사람에게 남깁니다."
+                                                     ],
+                                         "next_steps":  [
+                                                            "현행 처리시간·오류율의 기준선을 측정합니다.",
+                                                            "예외 사례를 포함한 평가셋으로 그림자 운영합니다."
+                                                        ]
+                                     },
+                                     {
+                                         "step_id":  "step-6",
+                                         "mode":  "automate_candidate",
+                                         "priority_score":  82.5,
+                                         "baseline_hours_monthly":  null,
+                                         "reasons":  [
+                                                         "점수는 도입 우선순위 휴리스틱이며 절감 효과의 실측값이 아닙니다."
+                                                     ],
+                                         "next_steps":  [
+                                                            "현행 처리시간·오류율의 기준선을 측정합니다.",
+                                                            "예외 사례를 포함한 평가셋으로 그림자 운영합니다."
+                                                        ]
+                                     }
+                                 ],
+                       "control_points":  [
+                                              "step-5"
+                                          ],
+                       "process_warnings":  [
+                                                "처리시간과 대기·인계·재작업을 함께 측정해야 전체 업무의 병목을 판단할 수 있습니다."
+                                            ]
+                   }
+    },
+    {
+        "domain":  "hr",
+        "synthetic":  true,
+        "result":  {
+                       "business":  "입사 서류 검토",
+                       "heuristic_version":  "ax-triage-v1",
+                       "measured_roi":  false,
+                       "steps":  [
+                                     {
+                                         "step_id":  "step-1",
+                                         "mode":  "automate_candidate",
+                                         "priority_score":  82.5,
+                                         "baseline_hours_monthly":  null,
+                                         "reasons":  [
+                                                         "점수는 도입 우선순위 휴리스틱이며 절감 효과의 실측값이 아닙니다."
+                                                     ],
+                                         "next_steps":  [
+                                                            "현행 처리시간·오류율의 기준선을 측정합니다.",
+                                                            "예외 사례를 포함한 평가셋으로 그림자 운영합니다."
+                                                        ]
+                                     },
+                                     {
+                                         "step_id":  "step-2",
+                                         "mode":  "automate_candidate",
+                                         "priority_score":  82.5,
+                                         "baseline_hours_monthly":  null,
+                                         "reasons":  [
+                                                         "점수는 도입 우선순위 휴리스틱이며 절감 효과의 실측값이 아닙니다."
+                                                     ],
+                                         "next_steps":  [
+                                                            "현행 처리시간·오류율의 기준선을 측정합니다.",
+                                                            "예외 사례를 포함한 평가셋으로 그림자 운영합니다."
+                                                        ]
+                                     },
+                                     {
+                                         "step_id":  "step-3",
+                                         "mode":  "automate_candidate",
+                                         "priority_score":  82.5,
+                                         "baseline_hours_monthly":  null,
+                                         "reasons":  [
+                                                         "점수는 도입 우선순위 휴리스틱이며 절감 효과의 실측값이 아닙니다."
+                                                     ],
+                                         "next_steps":  [
+                                                            "현행 처리시간·오류율의 기준선을 측정합니다.",
+                                                            "예외 사례를 포함한 평가셋으로 그림자 운영합니다."
+                                                        ]
+                                     },
+                                     {
+                                         "step_id":  "step-4",
+                                         "mode":  "approval_required",
+                                         "priority_score":  67.5,
+                                         "baseline_hours_monthly":  null,
+                                         "reasons":  [
+                                                         "점수는 도입 우선순위 휴리스틱이며 절감 효과의 실측값이 아닙니다."
+                                                     ],
+                                         "next_steps":  [
+                                                            "현행 처리시간·오류율의 기준선을 측정합니다.",
+                                                            "예외 사례를 포함한 평가셋으로 그림자 운영합니다."
+                                                        ]
+                                     },
+                                     {
+                                         "step_id":  "step-5",
+                                         "mode":  "assist",
+                                         "priority_score":  22.5,
+                                         "baseline_hours_monthly":  null,
+                                         "reasons":  [
+                                                         "점수는 도입 우선순위 휴리스틱이며 절감 효과의 실측값이 아닙니다.",
+                                                         "비가역 작업은 사람의 판단과 별도 실행 통제가 필요합니다.",
+                                                         "통제 결정과 금전·권리·안전 영향의 판단은 사람에게 남깁니다."
+                                                     ],
+                                         "next_steps":  [
+                                                            "현행 처리시간·오류율의 기준선을 측정합니다.",
+                                                            "예외 사례를 포함한 평가셋으로 그림자 운영합니다."
+                                                        ]
+                                     },
+                                     {
+                                         "step_id":  "step-6",
+                                         "mode":  "automate_candidate",
+                                         "priority_score":  82.5,
+                                         "baseline_hours_monthly":  null,
+                                         "reasons":  [
+                                                         "점수는 도입 우선순위 휴리스틱이며 절감 효과의 실측값이 아닙니다."
+                                                     ],
+                                         "next_steps":  [
+                                                            "현행 처리시간·오류율의 기준선을 측정합니다.",
+                                                            "예외 사례를 포함한 평가셋으로 그림자 운영합니다."
+                                                        ]
+                                     }
+                                 ],
+                       "control_points":  [
+                                              "step-5"
+                                          ],
+                       "process_warnings":  [
+                                                "처리시간과 대기·인계·재작업을 함께 측정해야 전체 업무의 병목을 판단할 수 있습니다."
+                                            ]
+                   }
+    }
+]

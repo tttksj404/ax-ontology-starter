@@ -1,0 +1,62 @@
+2026-10-02 TDD red evidence
+command: uv run pytest tests/test_onboarding.py tests/test_data_contracts.py tests/test_release_gate.py -q
+exit_code: 1
+
+ERROR tests/test_onboarding.py
+ModuleNotFoundError: No module named 'ax_starter.onboarding'
+
+ERROR tests/test_data_contracts.py
+ModuleNotFoundError: No module named 'ax_starter.data_contracts'
+
+ERROR tests/test_release_gate.py
+ModuleNotFoundError: No module named 'ax_starter.release_gate'
+
+Result: 3 collection errors; the requested v0.2 contracts were absent before implementation.
+
+2026-10-02 registry boundary red evidence
+command: uv run pytest tests/test_data_contracts.py -q
+exit_code: 1
+
+ERROR tests/test_data_contracts.py
+ImportError: cannot import name 'DataContractRegistry' from 'ax_starter.data_contracts'
+
+Result: the server-owned registry requested during integration did not exist before its test.
+
+2026-10-02 executable example red evidence
+command: uv run pytest <three v0.2 example tests> -q
+exit_code: 1
+
+FileNotFoundError: examples/v0.2/onboarding-request.json
+FileNotFoundError: examples/v0.2/data-contract-registry.json
+FileNotFoundError: examples/v0.2/release-evaluation.json
+
+Result: all three example behavior tests failed because the synthetic fixtures were absent.
+
+2026-10-02 security-boundary red evidence
+command: uv run pytest tests/test_data_contracts.py tests/test_release_gate.py -q
+exit_code: 1
+
+16 failed, 4 passed
+- DataContract rejected the new minimum_sensitivity field as an extra input.
+- SourceReference accepted userinfo and decoded token/key/credential query names.
+- ReleaseGate lacked eligible_for_field_review and fixed evidence-assurance fields.
+
+Result: the pre-change contracts reproduced every newly reviewed boundary gap.
+
+2026-10-02 immutable release-target manifest red evidence
+command: uv run pytest tests/test_release_gate.py -q
+exit_code: 1
+
+ImportError: cannot import name 'EvaluationArtifactRef' from ax_starter.release_gate
+
+Result: the release recommendation had no immutable target manifest before this change.
+
+2026-10-02 deterministic data-contract binding red evidence
+command: uv run pytest tests/test_data_contracts.py -q
+exit_code: 1
+
+2 failed, 15 passed
+- Identical contracts produced 5 different SHA-256 values across PYTHONHASHSEED 1..8.
+- required_provenance serialized in non-canonical frozenset iteration order.
+
+Result: a normal Python process restart could change the stored contract binding digest.

@@ -1,0 +1,78 @@
+{
+    "schema":  "ax-verification-index/v1",
+    "version":  "0.3.0",
+    "revision":  2,
+    "test_count":  417,
+    "python_format_files":  144,
+    "type_errors":  0,
+    "type_warnings":  0,
+    "no_excuse_files":  47,
+    "installed_runtime_modules":  70,
+    "synthetic_only":  true,
+    "live_validated":  false,
+    "evidence_gate_origin":  "Exact TQE capsules returned by execution plus persisted raw/meta hash and marker revalidation.",
+    "tested_source_manifest":  "docs/evidence/v0.3.0/revision-2/tested-source-manifest.json",
+    "tested_source_manifest_sha256":  "4340075078c2a2c8fa61344a5a131e4d49b02c63188bdcce6ace9b739b3a952c",
+    "evidence":  [
+                     {
+                         "capsule_id":  "20261006-102040848-6a2d57cc",
+                         "raw_original_sha256":  "abd59e1b15bd3190fa015f8266f2ed956f663a9f8316bedcf2aff0ee8cb52e71",
+                         "raw_original_bytes":  1214,
+                         "exit_code":  0,
+                         "manual_inspection_required":  false,
+                         "hash_verified":  true,
+                         "all_detected_risk_lines_captured":  true,
+                         "delivered_log":  "docs/evidence/v0.3.0/revision-2/final-checks.txt",
+                         "delivered_sha256":  "c959631a9c269f7ced9edc5e3d5b091413f59f0c2c6732357597f7d05966b6d2",
+                         "delivered_bytes":  595
+                     },
+                     {
+                         "capsule_id":  "20261006-102116942-2cf31cea",
+                         "raw_original_sha256":  "2acf21e431170d6795176d66c36ba459f6a31df5d838a1e162e7731bf6ec829a",
+                         "raw_original_bytes":  4530,
+                         "exit_code":  0,
+                         "manual_inspection_required":  false,
+                         "hash_verified":  true,
+                         "all_detected_risk_lines_captured":  true,
+                         "delivered_log":  "docs/evidence/v0.3.0/revision-2/final-wheel-smoke.txt",
+                         "delivered_sha256":  "c3063a88a4e60b7a41f30215a1a439985792154252ab7417ede631ea4cbd0874",
+                         "delivered_bytes":  2190
+                     },
+                     {
+                         "capsule_id":  "20261006-102050808-dea109eb",
+                         "raw_original_sha256":  "417a61a0fa527250d1b0cdb623533c4f353f3f8f437b77bdae3f1dd5ffd33d3e",
+                         "raw_original_bytes":  152,
+                         "exit_code":  0,
+                         "manual_inspection_required":  false,
+                         "hash_verified":  true,
+                         "all_detected_risk_lines_captured":  true,
+                         "delivered_log":  "docs/evidence/v0.3.0/revision-2/final-no-excuse.txt",
+                         "delivered_sha256":  "9c50a833329399f9ff6b340b5eca478925747348bd39a0118f27177920ada755",
+                         "delivered_bytes":  73
+                     },
+                     {
+                         "capsule_id":  "20261006-102331767-90f0cdb0",
+                         "raw_original_sha256":  "b2f3b0219778098aa678c1bf2c9743fd4d25209e693c8d3fcaf19304175de734",
+                         "raw_original_bytes":  320,
+                         "exit_code":  0,
+                         "manual_inspection_required":  false,
+                         "hash_verified":  true,
+                         "all_detected_risk_lines_captured":  true,
+                         "delivered_log":  "docs/evidence/v0.3.0/revision-2/cold-db-compatibility.txt",
+                         "delivered_sha256":  "20753a49fc754d3e6dbf9624f043a8e0c062fd777bef00cc9a04f0af09c4fc2d",
+                         "delivered_bytes":  156
+                     },
+                     {
+                         "capsule_id":  "20261006-102529682-133c476e",
+                         "raw_original_sha256":  "dd15bd46696714d82ebcf4d987726808b041743799715a66adfc28cea0952652",
+                         "raw_original_bytes":  112,
+                         "exit_code":  0,
+                         "manual_inspection_required":  false,
+                         "hash_verified":  true,
+                         "all_detected_risk_lines_captured":  true,
+                         "delivered_log":  "docs/evidence/v0.3.0/revision-2/documentation-links.txt",
+                         "delivered_sha256":  "0e868f8487137dbfa15805cf9bfe6cf87b3032b74f59950f62ca36ec107350d1",
+                         "delivered_bytes":  54
+                     }
+                 ]
+}

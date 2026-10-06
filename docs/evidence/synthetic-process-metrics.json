@@ -1,0 +1,30 @@
+{
+    "source":  "synthetic:three-cases",
+    "synthetic":  true,
+    "case_count":  3,
+    "event_count":  6,
+    "median_lead_minutes":  32.0,
+    "p90_lead_minutes":  32.0,
+    "handoff_count":  3,
+    "stages":  [
+                   {
+                       "step_id":  "step-1",
+                       "observations":  3,
+                       "median_work_minutes":  5.0,
+                       "p90_work_minutes":  5.0,
+                       "median_wait_minutes":  2.0,
+                       "wait_share":  0.2857,
+                       "repeated_visits":  0
+                   },
+                   {
+                       "step_id":  "step-2",
+                       "observations":  3,
+                       "median_work_minutes":  5.0,
+                       "p90_work_minutes":  5.0,
+                       "median_wait_minutes":  20.0,
+                       "wait_share":  0.8,
+                       "repeated_visits":  0
+                   }
+               ],
+    "bottleneck_step":  "step-2"
+}

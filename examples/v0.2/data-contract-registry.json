@@ -1,0 +1,36 @@
+{
+  "contracts": [
+    {
+      "id": "support-record-v1",
+      "version": "1.0.0",
+      "tenant": "synthetic-tenant",
+      "owner": "data-owner",
+      "collection_source": {
+        "identifier": "synthetic-source",
+        "uri": "memory://support-records"
+      },
+      "object_scope": ["support-record"],
+      "access": {
+        "tenant": "synthetic-tenant",
+        "groups": ["operators"],
+        "sensitivity": 2,
+        "purposes": ["operations"]
+      },
+      "minimum_sensitivity": 1,
+      "lifecycle": {
+        "refresh_interval_hours": 24,
+        "deletion": {
+          "retention_days": 30,
+          "delete_within_hours": 24,
+          "propagate_source_deletion": true
+        },
+        "reconciliation": {
+          "interval_hours": 24,
+          "action": "quarantine"
+        }
+      },
+      "expected_content_sha256": null,
+      "required_provenance": ["synthetic-source"]
+    }
+  ]
+}

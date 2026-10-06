@@ -1,0 +1,26 @@
+Independent design review evidence used for identity hardening
+Date: 2026-10-02
+
+Source artifact:
+docs/evidence/v0.2.0/design-review-output.json
+
+Recorded metadata:
+- provider-reported canonical model: claude-opus-5-5
+- terminal_reason: completed
+- subtype: success
+- permission_denials: none
+- result verdict: NEEDS_FIX
+
+Identity findings applied:
+- bind user/service subject kind and allowed client_id to server configuration;
+- use sub != client_id for user and sub == client_id for service;
+- scope kid selection to an exact issuer;
+- reject non-allowlisted JOSE headers and duplicate JSON keys;
+- restrict pinned public RSA key members, size, and exponent;
+- bound NumericDate, token age, and lifetime;
+- prevent JWT-shaped failure from falling back to opaque authentication;
+- use server-owned person identity to prevent multiple active human Principals.
+
+Evidence boundary:
+The review was a design review, not an implementation PASS. Its RFC statements were checked
+against official RFC 9068/RFC 7515 and PyJWT 2.15.1 documentation in identity-standards.txt.

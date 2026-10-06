@@ -1,0 +1,2 @@
+no violations in 48 file(s)
+V03_NO_EXCUSE_PASSED changed_python_files=48

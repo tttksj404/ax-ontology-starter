@@ -1,0 +1,43 @@
+OIDC identity public contract
+Checked: 2026-10-02 (Asia/Seoul)
+
+Principal
+- ActorKind is human or service. Principal.actor_kind defaults to human.
+- Principal.person_id is optional server-owned metadata.
+- Principal.effective_person_id is person_id or subject for a human and None for a service.
+- A service Principal cannot carry person_id.
+- IdentityRegistry rejects different active human Principals for the same tenant and effective person.
+- The same Principal may be referenced by both opaque and JWT credentials.
+
+Authentication selection
+- IdentityRegistry.authentication_mode is opaque_only, jwt_only, or both.
+- The default is opaque_only for the existing demo configuration.
+- Each mode must have exactly its configured mechanism(s).
+- In both mode, a three-segment JWT-shaped credential is verified only as JWT; failure never
+  falls back to an opaque credential hash lookup.
+
+OIDC issuer and binding
+- OIDCIssuer fixes one HTTPS issuer, one API audience, pinned JWKS, max_token_age, and
+  max_lifetime.
+- OIDCIdentityBinding fixes issuer, subject, subject_kind, allowed_client_ids, and one
+  server-owned Principal.
+- A user binding requires a human Principal, an allowed client_id, and sub != client_id.
+- A service binding requires a service Principal and sub == client_id; its allowed client_id
+  is exactly the bound subject.
+- Token tenant, group, role, entitlement, and clearance claims do not create server authority.
+
+Token and key restrictions
+- Only RS256 access tokens with typ at+jwt or application/at+jwt are accepted.
+- Header names are limited to alg, kid, and typ. Duplicate JSON keys are rejected in both
+  header and payload.
+- aud is one exact string. exp, iat, and optional nbf are bounded nonnegative integers.
+- Token age and exp-iat lifetime are bounded by issuer configuration.
+- Pinned RSA keys are public verification keys only, 2048..8192 bits, exponent 65537,
+  unique by kid within one issuer, and cannot carry private or unregistered members.
+
+Operational boundary
+- read_identities reparses the whole file; missing, partial, or invalid files fail closed with
+  identity_registry_unavailable.
+- Binding disablement and pinned-key removal take effect at the next file read.
+- Commercial IdP integration, full SSO login, MFA, sender-constrained tokens, and replay
+  prevention remain outside this increment.

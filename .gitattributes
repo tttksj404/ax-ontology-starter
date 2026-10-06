@@ -1,0 +1,4 @@
+# Preserve the exact bytes bound by verification and historical audit manifests.
+* -text whitespace=blank-at-eol,space-before-tab,cr-at-eol,-blank-at-eof
+# Historical audit snapshots contain verbatim source and output; retain their whitespace.
+docs/evidence/** -whitespace

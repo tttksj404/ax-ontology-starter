@@ -1,0 +1,110 @@
+{
+  "schema": "ax-wiki-independent-review/v1",
+  "revision": 2,
+  "verdict": "NEEDS_FIX",
+  "report": {
+    "path": "docs/evidence/v0.3.0/revision-2/independent-review.md",
+    "sha256": "dc154a97eb0f978a0229a1d79ce23d95242c2b82b20c93b7d15cfe0dbfc40c52"
+  },
+  "source_binding": {
+    "scope": "src/ax_starter/**/*.py + tests/**/*.py + pyproject.toml + uv.lock + check scripts",
+    "file_count": 156,
+    "before_sha256": "db31c329c3f6364a145e59c3c4efc357c0c6676280972ef8018bdd74fd324b15",
+    "after_sha256": "db31c329c3f6364a145e59c3c4efc357c0c6676280972ef8018bdd74fd324b15",
+    "tested_source_manifest": {
+      "path": "docs/evidence/v0.3.0/revision-2/tested-source-manifest.json",
+      "file_count": 148,
+      "sha256": "4340075078c2a2c8fa61344a5a131e4d49b02c63188bdcce6ace9b739b3a952c",
+      "mismatch_count": 0
+    }
+  },
+  "audit_inputs": [
+    {
+      "path": ".omx/artifacts/wiki-final-audit-result.txt",
+      "sha256": "2c7d161e56d123ebafdba75cd217ae1189c60e7560b757647c0a5261f5e3fbcd"
+    },
+    {
+      "path": ".omx/artifacts/wiki-design-retry-result.txt",
+      "sha256": "a5b2c515d37fc2a3c0fcadfc42e9cb592b9256927dfdf0dd34d90d212b6c8669"
+    }
+  ],
+  "blocking_findings": [
+    {
+      "id": "wiki-link-acl-scope-gap",
+      "severity": "blocker",
+      "status": "open",
+      "summary": "An actor who can read every bound object and source but cannot traverse the only hop link can review, publish, read, index, and export the page.",
+      "root_cause": "Stored scope binds objects but read and publish surfaces do not recompute the stored query scope under the current actor's visible links; query does recompute it, producing inconsistent authorization.",
+      "source_locations": [
+        "src/ax_starter/retrieval.py:69",
+        "src/ax_starter/wiki_object_policy.py:10",
+        "src/ax_starter/wiki_reads.py:188",
+        "src/ax_starter/wiki_publish_flow.py:92",
+        "src/ax_starter/wiki_query_policy.py:24"
+      ],
+      "reproducer": {
+        "marker": "LINK_ACL_COUNTEREXAMPLE_CONFIRMED",
+        "mock_free": true,
+        "observed": {
+          "view_draft": "allowed",
+          "publish": "allowed",
+          "page": "allowed",
+          "index_count": 1,
+          "export_page_id": "acme.review-procedure",
+          "query_page_count": 0
+        }
+      },
+      "acceptance": [
+        "Recompute the stored query scope with the current actor for proposer, reviewer, draft, page, index, lint, and export paths.",
+        "Require every stored scope object to be reproducible through the current actor's visible traversal scope.",
+        "Add the link-only ACL counterexample as a regression test and keep object snapshot, hash, and current ACL checks.",
+        "Rerun independent focused tests, full regression, static checks, wheel smoke, and source-hash equality."
+      ]
+    }
+  ],
+  "closed_direct_findings": [
+    "B1 existing-head authorization and revision disclosure",
+    "B2 anchor and hop object binding for object ACL counterexamples",
+    "R3 effective-person and human review binding",
+    "R4 generation-route provenance",
+    "R5 derived-output role and known marker isolation"
+  ],
+  "execution_evidence": [
+    {
+      "check": "focused B1 B2 R3 R4 R5 tests with branch coverage",
+      "result": "34 passed",
+      "capsule_id": "20261006-102302738-01d70b2a",
+      "raw_sha256": "4064ce884184874dd8418d320f646b8a4b9ebc58f7d61ab12a8ddfc0ad3b05ff"
+    },
+    {
+      "check": "full pytest",
+      "result": "417 passed",
+      "capsule_id": "20261006-102338894-cf31d0bb",
+      "raw_sha256": "9a4ffc75683cc072f501a150c8fa627df3ad5b7d4312adca34b314fb11e81d00"
+    },
+    {
+      "check": "ruff lint",
+      "result": "passed",
+      "capsule_id": "20261006-102531580-f64a8c9c",
+      "raw_sha256": "af352a86840ad0af3d37ea0d9197f868363a6dac6b1c2ef5d2722f6b41d2d9af"
+    },
+    {
+      "check": "ruff format",
+      "result": "204 files already formatted",
+      "capsule_id": "20261006-102556358-f8271c6d",
+      "raw_sha256": "439793a8778cd9de01e296202ff0117c8564555df8e98c1d1148d97ecbb6d844"
+    },
+    {
+      "check": "basedpyright",
+      "result": "0 errors, 0 warnings, 0 notes",
+      "capsule_id": "20261006-102531595-6f77afbb",
+      "raw_sha256": "6851c16b34e045435cd01974bb0fdc7298759457a68f2f6739f1b742245a5341"
+    },
+    {
+      "check": "isolated installed wheel import and CLI help",
+      "result": "passed",
+      "wheel_sha256": "b58a67004bf3cf06a9d98f5f0ddde7dd3aa750b981f23436ba2877ae578a0521"
+    }
+  ],
+  "claim_boundary": "Passing body, hash, and executable checks does not establish semantic quality, enterprise integration, production security certification, model quality, or ROI."
+}

@@ -1,0 +1,73 @@
+{
+  "profile": {
+    "company": "Synthetic Co",
+    "industry": "synthetic",
+    "jurisdictions": ["kr"],
+    "owner": "company-owner",
+    "deployment_modes": ["private"],
+    "maximum_sensitivity": 2,
+    "allowed_transfers": [],
+    "allowed_regions": ["kr"],
+    "allowed_models": ["candidate-a"],
+    "allowed_tools": ["retrieval"],
+    "retention_days": 30,
+    "authorized_groups": ["operators"],
+    "risk_owner": "risk-owner",
+    "field_reviewer": "field-reviewer",
+    "evidence": {
+      "governance": "documented",
+      "deployment": "documented",
+      "data_classification": "documented",
+      "transfer_policy": "documented",
+      "region_policy": "documented",
+      "model_policy": "documented",
+      "tool_policy": "documented",
+      "retention_policy": "documented",
+      "access_policy": "documented",
+      "risk_assessment": "documented",
+      "field_evaluation": "documented"
+    },
+    "approvals": {
+      "process_owner": "approved",
+      "security": "approved",
+      "privacy": "approved",
+      "risk_owner": "approved",
+      "field_reviewer": "approved"
+    }
+  },
+  "intake": {
+    "business": "Synthetic support review",
+    "objective": "Measure review latency",
+    "process_owner": "process-owner",
+    "industry": "synthetic",
+    "constraints": ["no-external-transfer"],
+    "steps": [
+      {
+        "id": "review",
+        "name": "Review request",
+        "owner": "operator",
+        "inputs": ["request"],
+        "outputs": ["decision"],
+        "systems": ["synthetic-erp"],
+        "rules": ["synthetic-rule"],
+        "exceptions": ["missing-field"],
+        "evidence_sources": ["synthetic-sop"],
+        "risk": "medium",
+        "sensitivity": 2,
+        "authorized": true,
+        "reversible": true,
+        "evidence_status": "documented",
+        "value_status": "documented",
+        "control_point": true,
+        "decision_impact": "administrative"
+      }
+    ]
+  },
+  "requested_deployment": "private",
+  "requested_sensitivity": 2,
+  "requested_transfers": [],
+  "requested_regions": ["kr"],
+  "requested_models": ["candidate-a"],
+  "requested_tools": ["retrieval"],
+  "requested_groups": ["operators"]
+}

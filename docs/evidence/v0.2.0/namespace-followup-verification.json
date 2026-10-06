@@ -1,0 +1,107 @@
+{
+    "schema":  "ax-namespace-followup/v1",
+    "scope":  "Codex post-audit evidence and documentation inspection; no runtime changes or test rerun",
+    "original_review":  {
+                            "path":  "docs/evidence/v0.2.0/independent-namespace-review.md",
+                            "sha256":  "3781bd12f89f2e30fc73fc2d7348ccac39ba31973435fa9735827845f8b12db7",
+                            "preserved":  true
+                        },
+    "original_test_execution":  {
+                                    "capture_id":  "20261002-132856006-ee791e2f",
+                                    "command":  "./.venv/Scripts/python.exe -m pytest -q tests/test_knowledge_tenant_namespace.py tests/test_knowledge_atomicity.py tests/test_knowledge_empty_groups.py tests/test_knowledge_contract_binding.py tests/test_knowledge_tombstone_drift.py tests/test_knowledge_migration.py tests/test_knowledge_snapshot.py tests/test_knowledge.py",
+                                    "command_sha256":  "bed1ba9bf06a547b229302b0b03d4f29204e2e71ae0bae2bab7acde9f326ce03",
+                                    "raw_log_sha256":  "27a75bdefa53a563942f674506255b3eff12ece20ad18ade11188c1c78da32a1",
+                                    "exit_code":  0,
+                                    "passed":  52,
+                                    "rerun":  false,
+                                    "files":  [
+                                                  {
+                                                      "path":  "tests/test_knowledge_tenant_namespace.py",
+                                                      "sha256":  "096cc8c06d14aa4fbf7c0863b3b6655e20cd8f2457905f976a569b30f4fd2f04",
+                                                      "added_to_scope_evidence":  false
+                                                  },
+                                                  {
+                                                      "path":  "tests/test_knowledge_atomicity.py",
+                                                      "sha256":  "03429c0c2631506b3352252c76c7460a169b23abbb332cd7415910003601dbf9",
+                                                      "added_to_scope_evidence":  false
+                                                  },
+                                                  {
+                                                      "path":  "tests/test_knowledge_empty_groups.py",
+                                                      "sha256":  "d1dd27e0147a184a8dfb67f846a54cfa1c508130db2bbe29071fc02bf459729f",
+                                                      "added_to_scope_evidence":  false
+                                                  },
+                                                  {
+                                                      "path":  "tests/test_knowledge_contract_binding.py",
+                                                      "sha256":  "8bd7450779e0a7343b8a153160664ccba119c6977e320779d284d013fce61281",
+                                                      "added_to_scope_evidence":  false
+                                                  },
+                                                  {
+                                                      "path":  "tests/test_knowledge_tombstone_drift.py",
+                                                      "sha256":  "4cb4dd7615118d4fad73f5088ea36bd1786da69fec31d4177de698c875be9a9e",
+                                                      "added_to_scope_evidence":  false
+                                                  },
+                                                  {
+                                                      "path":  "tests/test_knowledge_migration.py",
+                                                      "sha256":  "434ec7c891107b6282353ef24ab449ba1282d2e5592e04044cd6a95f994dd3db",
+                                                      "added_to_scope_evidence":  true
+                                                  },
+                                                  {
+                                                      "path":  "tests/test_knowledge_snapshot.py",
+                                                      "sha256":  "c21b90707cb59496314369c8c7b09904d97b13f7d6fa239024f7a5c84afd2df2",
+                                                      "added_to_scope_evidence":  true
+                                                  },
+                                                  {
+                                                      "path":  "tests/test_knowledge.py",
+                                                      "sha256":  "bb03e03ca53b72e11bd15b0c74064ad80482c47605b1c1c8192e16e952978e88",
+                                                      "added_to_scope_evidence":  true
+                                                  }
+                                              ]
+                                },
+    "learning_guide":  {
+                           "path":  "docs/LEARNING_GUIDE.md",
+                           "sha256":  "dc3cd95ac79c3814385c5e479cac713ad972a13635350de5056c66f60737fe3a",
+                           "inspected_scope":  "managed import/retire command and namespace/current ACL/legacy sections",
+                           "managed_retire_id":  "acme.pilot-policy-1",
+                           "explicit_invalid_id_examples_are_teaching_counterexamples":  true,
+                           "supplied_to_final_opus":  false
+                       },
+    "v02_examples":  {
+                         "files":  [
+                                       {
+                                           "path":  "examples/v0.2/data-contract-registry.json",
+                                           "sha256":  "a4e715d1c5e9e70fd42df18f49c76a951347e9f8b04b3c16e437994da576bd22",
+                                           "json_parsed":  true
+                                       },
+                                       {
+                                           "path":  "examples/v0.2/document-candidate.json",
+                                           "sha256":  "8defd8589da8ea88ed813b910486b41c69ce48cb6878b350f26fba139da95dfd",
+                                           "json_parsed":  true
+                                       },
+                                       {
+                                           "path":  "examples/v0.2/onboarding-request.json",
+                                           "sha256":  "656bceedef52af6f21f1014430b4a879f7780f8bfdec21f1f39d1614a45a8415",
+                                           "json_parsed":  true
+                                       },
+                                       {
+                                           "path":  "examples/v0.2/release-criteria.json",
+                                           "sha256":  "68a8462ad950a3c2ad9e007e7f4487bfa7453109aa34ea10b7dfae33c9854b2b",
+                                           "json_parsed":  true
+                                       },
+                                       {
+                                           "path":  "examples/v0.2/release-evaluation.json",
+                                           "sha256":  "d7a1f040d48d4dbd65cbf9865c845b4c88824b91a466a5b5a00422050948b8f1",
+                                           "json_parsed":  true
+                                       }
+                                   ],
+                         "document_ids":  [
+                                              {
+                                                  "file":  "examples/v0.2/document-candidate.json",
+                                                  "json_path":  "$",
+                                                  "document_id":  "synthetic-tenant.support-record-1",
+                                                  "tenant":  "synthetic-tenant",
+                                                  "namespace_matches":  true
+                                              }
+                                          ],
+                         "supplied_to_final_opus":  false
+                     }
+}

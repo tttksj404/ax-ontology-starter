@@ -1,0 +1,137 @@
+FFF                                                                      [100%]
+================================== FAILURES ===================================
+________________ test_runtime_when_explicit_db_is_inside_pilot ________________
+
+tmp_path = WindowsPath('C:/Users/SSAFY/AppData/Local/Temp/pytest-of-SSAFY/pytest-3140/test_runtime_when_explicit_db_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001DDB0F063F0>
+
+    def test_runtime_when_explicit_db_is_inside_pilot(
+        tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    ) -> None:
+        # Given
+        directory = tmp_path / "pilot"
+        _ = initialize(directory, DemoDomain.PROCUREMENT)
+        configure(monkeypatch, directory)
+        monkeypatch.chdir(tmp_path)
+        monkeypatch.setenv("AX_DB_FILE", str(directory / "state.db"))
+        # When
+        _ = load_app()
+        # Then
+>       assert (directory / "state.db").exists()
+E       AssertionError: assert False
+E        +  where False = exists()
+E        +    where exists = (WindowsPath('C:/Users/SSAFY/AppData/Local/Temp/pytest-of-SSAFY/pytest-3140/test_runtime_when_explicit_db_0/pilot') / 'state.db').exists
+
+C:\Users\SSAFY\Desktop\2�б�\ax-ontology-starter\tests\test_runtime.py:30: AssertionError
+________________ test_review_when_full_payload_must_be_visible ________________
+
+engine = <ax_starter.actions.ActionEngine object at 0x000001DDB20E87A0>
+principals = (Principal(subject='operator', tenant='acme', groups=frozenset({'procurement'}), clearance=<Sensitivity.INTERNAL: 1>, ...ERNAL: 1>, operations=frozenset({<Operation.READ: 'read'>}), purposes=frozenset({<Purpose.OPERATIONS: 'operations'>})))
+now = datetime.datetime(2026, 10, 1, 0, 0, tzinfo=datetime.timezone.utc)
+
+    def test_review_when_full_payload_must_be_visible(
+        engine: ActionEngine, principals: tuple[Principal, ...], now: datetime
+    ) -> None:
+        # Given
+        proposal = engine.propose(principals[0], request(), now)
+        # When
+        sim = engine.simulate(principals[1], proposal.id, now)
+        # Then
+>       assert content_hash(sim.payload.model_dump_json()) == sim.reviewed_payload_hash
+                            ^^^^^^^^^^^
+
+tests\test_review_contracts.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Simulation(proposal_id='729cd20c-b8ec-48cc-bc98-292d458953f1', reviewed_payload_hash='ae93c2d2410d32fcd8387ac3276eab2f...iewed'), PropertyValue(key='summary', value='�ռ� ���� ���')), version=2, source='synthetic:request-1'), will_execute=False)
+item = 'payload'
+
+    def __getattr__(self, item: str) -> Any:
+        private_attributes = object.__getattribute__(self, '__private_attributes__')
+        if item in private_attributes:
+            attribute = private_attributes[item]
+            if hasattr(attribute, '__get__'):
+                return attribute.__get__(self, type(self))  # type: ignore
+    
+            try:
+                # Note: self.__pydantic_private__ cannot be None if self.__private_attributes__ has items
+                return self.__pydantic_private__[item]  # type: ignore
+            except KeyError as exc:
+                raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+        else:
+            # `__pydantic_extra__` can fail to be set if the model is not yet fully initialized.
+            # See `BaseModel.__repr_args__` for more details
+            try:
+                pydantic_extra = object.__getattribute__(self, '__pydantic_extra__')
+            except AttributeError:
+                pydantic_extra = None
+    
+            if pydantic_extra and item in pydantic_extra:
+                return pydantic_extra[item]
+            else:
+                if hasattr(self.__class__, item):
+                    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+                else:
+                    # this is the current error
+>                   raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+E                   AttributeError: 'Simulation' object has no attribute 'payload'
+
+.venv\Lib\site-packages\pydantic\main.py:1042: AttributeError
+_______ test_receipt_and_rollback_when_evidence_expires_after_execution _______
+
+tmp_path = WindowsPath('C:/Users/SSAFY/AppData/Local/Temp/pytest-of-SSAFY/pytest-3140/test_receipt_and_rollback_when0')
+pack = DomainPack(id='procurement-demo', version='1.0.0', description='���� ��û ����: ���� ���������� ���� �ռ� ��������', object_types=(ObjectTy...ations'>, <Purpose.AUDIT: 'audit'>})), valid_until=datetime.datetime(2028, 1, 1, 0, 0, tzinfo=datetime.timezone.utc))))
+principals = (Principal(subject='operator', tenant='acme', groups=frozenset({'procurement'}), clearance=<Sensitivity.INTERNAL: 1>, ...ERNAL: 1>, operations=frozenset({<Operation.READ: 'read'>}), purposes=frozenset({<Purpose.OPERATIONS: 'operations'>})))
+now = datetime.datetime(2026, 10, 1, 0, 0, tzinfo=datetime.timezone.utc)
+
+    def test_receipt_and_rollback_when_evidence_expires_after_execution(
+        tmp_path: Path, pack: DomainPack, principals: tuple[Principal, ...], now: datetime
+    ) -> None:
+        # Given
+        engine = short_lived_engine(tmp_path / "short.db", pack, principals, now)
+        proposal = engine.propose(principals[0], request(), now)
+        _ = engine.approve(
+            principals[1], proposal.id, now + timedelta(minutes=1), proposal.payload_hash
+        )
+        executed = engine.execute(principals[0], proposal.id, now + timedelta(minutes=2))
+        # When
+>       replay = engine.execute(principals[0], proposal.id, now + timedelta(minutes=25))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_review_contracts.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.omx\before-audit-fixes\src\ax_starter\actions.py:118: in execute
+    proposal, entity = self._authorized(conn, key, actor, Operation.EXECUTE, now)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.omx\before-audit-fixes\src\ax_starter\actions.py:79: in _authorized
+    verify_evidence(self.pack, current, proposal.payload, now)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+pack = DomainPack(id='procurement-demo', version='1.0.0', description='���� ��û ����: ���� ���������� ���� �ռ� ��������', object_types=(ObjectTy...ions'>, <Purpose.AUDIT: 'audit'>})), valid_until=datetime.datetime(2026, 10, 1, 0, 20, tzinfo=datetime.timezone.utc))))
+actor = Principal(subject='operator', tenant='acme', groups=frozenset({'procurement'}), clearance=<Sensitivity.INTERNAL: 1>, o...ration.EXECUTE: 'execute'>, <Operation.PROPOSE: 'propose'>}), purposes=frozenset({<Purpose.OPERATIONS: 'operations'>}))
+payload = ActionPayload(action_type='mark_reviewed', object_id='request-1', tenant='acme', proposer='operator', previous_status=...f87501db9b7683c9a6d5b95e0071510b813cf9f143d8fdb97', expires_at=datetime.datetime(2026, 10, 1, 0, 30, tzinfo=TzInfo(0)))
+now = datetime.datetime(2026, 10, 1, 0, 25, tzinfo=datetime.timezone.utc)
+
+    def verify_evidence(
+        pack: DomainPack, actor: Principal, payload: ActionPayload, now: datetime
+    ) -> None:
+        docs = evidence_documents(
+            pack,
+            actor,
+            Query(question="action evidence", object_id=payload.object_id, purpose=payload.purpose),
+            now,
+        )
+        hashes = {doc.id: content_hash(doc.text) for doc in docs}
+        if any(
+            hashes.get(key) != digest
+            for key, digest in zip(payload.evidence_ids, payload.evidence_hashes, strict=True)
+        ):
+>           raise AXError("evidence_changed_or_revoked", 403)
+E           ax_starter.common.AXError: evidence_changed_or_revoked
+
+.omx\before-audit-fixes\src\ax_starter\proposal_builder.py:117: AXError
+=========================== short test summary info ===========================
+FAILED tests/test_runtime.py::test_runtime_when_explicit_db_is_inside_pilot
+FAILED tests/test_review_contracts.py::test_review_when_full_payload_must_be_visible
+FAILED tests/test_review_contracts.py::test_receipt_and_rollback_when_evidence_expires_after_execution
+3 failed in 0.58s

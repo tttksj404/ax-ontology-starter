@@ -1,0 +1,11 @@
+{
+  "phase": "design",
+  "requested_model": "claude-opus-5-5",
+  "requested_effort": "max",
+  "observed_models": [
+    "claude-opus-5-5"
+  ],
+  "is_error": false,
+  "duration_ms": 1047845,
+  "raw_result_sha256": "99afd76ffcae8f404932f6fe23a842da6ed97d12dc1cf49e748101405129f84b"
+}

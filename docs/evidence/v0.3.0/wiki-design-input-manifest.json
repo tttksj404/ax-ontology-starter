@@ -1,0 +1,77 @@
+[
+    {
+        "path":  "docs/evidence/v0.3.0/user-request.md",
+        "bytes":  802,
+        "sha256":  "3be102d5ea949d30abf256a3b466eb1a5daa9b239191256c8556ae06bfbd8c96"
+    },
+    {
+        "path":  "docs/WORK_PLAN_v0.3.md",
+        "bytes":  2879,
+        "sha256":  "fee97e32202574d334567f027b5407285e9cb65905c9190ccbc17a60935e6e11"
+    },
+    {
+        "path":  "docs/LLM_WIKI_GUIDE.md",
+        "bytes":  19478,
+        "sha256":  "2126f6d14f0feca672bce6ff35d966095cc63f8ef690591fe36104234a34d430"
+    },
+    {
+        "path":  "src/ax_starter/common.py",
+        "bytes":  2572,
+        "sha256":  "692f7c82ec31fd22f8b8cc038516124ef5a448568036979a9d39eaca27a2fa9f"
+    },
+    {
+        "path":  "src/ax_starter/policy.py",
+        "bytes":  688,
+        "sha256":  "e7126f1716c842f5977b519eaa115af0d58cafef0194df2af94a48ec572a63bc"
+    },
+    {
+        "path":  "src/ax_starter/retrieval.py",
+        "bytes":  5734,
+        "sha256":  "a11d71f22d7b161c273489513bbae2ca6fae62e7948aa5f0988d2522465c7cf0"
+    },
+    {
+        "path":  "src/ax_starter/store.py",
+        "bytes":  7435,
+        "sha256":  "4a6b13fd86ca54577719a90536291c8ceebadd23f44a90db59f55ea943adceec"
+    },
+    {
+        "path":  "src/ax_starter/generation.py",
+        "bytes":  6013,
+        "sha256":  "4302f04c976664294645450585ac3a3ae4dc88b5350b4162decd78834476837c"
+    },
+    {
+        "path":  "src/ax_starter/providers.py",
+        "bytes":  5130,
+        "sha256":  "dfcc8898cc5fa16799e36eabd71b2bed6a9dd585393d38ea1f00146821ae03d9"
+    },
+    {
+        "path":  "src/ax_starter/knowledge.py",
+        "bytes":  8533,
+        "sha256":  "785bc8db3fac69a1bf693f435f0dce8e486c8b43094c7031c9f0d416a339e1a7"
+    },
+    {
+        "path":  "src/ax_starter/knowledge_store.py",
+        "bytes":  8743,
+        "sha256":  "e13caad12615f645e473210f884a22c6de6f60de1173bf9f3e67829ce18fce6e"
+    },
+    {
+        "path":  "src/ax_starter/knowledge_binding.py",
+        "bytes":  1055,
+        "sha256":  "7822edef53f04ce1325d58491ad48dc47825c9d4b566bcbf402f0338a895acd8"
+    },
+    {
+        "path":  "src/ax_starter/action_authorization.py",
+        "bytes":  3353,
+        "sha256":  "789eda2daf229da7bb02c5bdc73426b4c212110f40f6b565ddc9f94747a4f003"
+    },
+    {
+        "path":  "src/ax_starter/api.py",
+        "bytes":  8777,
+        "sha256":  "6034eb2449156af213a49d216d939154978deb75d578a999256ac723f8df3ae1"
+    },
+    {
+        "path":  "src/ax_starter/data_contracts.py",
+        "bytes":  8198,
+        "sha256":  "8feaf9d0041b748e3c9e29e16f69f5ba96e147fd682131137e66cdb46984b407"
+    }
+]

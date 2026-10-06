@@ -1,0 +1,26 @@
+OIDC identity follow-up scoped verification
+Date: 2026-10-02
+
+Command: uv run pytest -q tests/test_oidc.py tests/test_oidc_security.py tests/test_oidc_identity_contract.py
+...............................................                          [100%]
+47 passed in 2.48s
+exit code 0
+
+Command: uv run ruff check src/ax_starter/common.py src/ax_starter/auth.py src/ax_starter/oidc.py src/ax_starter/oidc_contracts.py src/ax_starter/oidc_tokens.py tests/oidc_fixtures.py tests/test_oidc.py tests/test_oidc_security.py tests/test_oidc_identity_contract.py
+All checks passed!
+exit code 0
+
+Command: uv run basedpyright src/ax_starter/common.py src/ax_starter/auth.py src/ax_starter/oidc.py src/ax_starter/oidc_contracts.py src/ax_starter/oidc_tokens.py tests/oidc_fixtures.py tests/test_oidc.py tests/test_oidc_security.py tests/test_oidc_identity_contract.py
+0 errors, 0 warnings, 0 notes
+exit code 0
+
+Command: uv run python <programming-skill>/scripts/python/check-no-excuse-rules.py <identity files>
+no violations in 9 file(s)
+exit code 0
+
+Pure LOC:
+src/ax_starter/common.py 65
+src/ax_starter/auth.py 112
+src/ax_starter/oidc.py 24
+src/ax_starter/oidc_contracts.py 129
+src/ax_starter/oidc_tokens.py 180

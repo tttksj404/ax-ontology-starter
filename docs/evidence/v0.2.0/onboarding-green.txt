@@ -1,0 +1,74 @@
+2026-10-02 v0.2 onboarding, data-contract, and release-gate verification
+
+Target tests
+command scope: tests/test_onboarding.py tests/test_data_contracts.py tests/test_release_gate.py
+result: 26 passed in 0.14s
+capsule_id: 20261002-093219260-5cf7a199
+artifact_sha256: 7596f4e87b489383a8c8297ede637dcc78d37f87876d34aec39180d9da6486f0
+manual_inspection_required: false
+hash_verified: true
+all_detected_risk_lines_captured: true
+
+Ruff target gate
+result: All checks passed!
+capsule_id: 20261002-093219297-e55a4808
+artifact_sha256: af352a86840ad0af3d37ea0d9197f868363a6dac6b1c2ef5d2722f6b41d2d9af
+manual_inspection_required: false
+hash_verified: true
+all_detected_risk_lines_captured: true
+
+Basedpyright target gate
+result: 0 errors, 0 warnings, 0 notes
+capsule_id: 20261002-093219332-1287a96c
+artifact_sha256: 6851c16b34e045435cd01974bb0fdc7298759457a68f2f6739f1b742245a5341
+manual_inspection_required: false
+hash_verified: true
+all_detected_risk_lines_captured: true
+
+Programming no-excuse gate
+result: no violations in 4 source files
+
+Pure LOC
+177 src/ax_starter/onboarding.py
+121 src/ax_starter/onboarding_contracts.py
+193 src/ax_starter/data_contracts.py
+157 src/ax_starter/release_gate.py
+140 tests/test_onboarding.py
+180 tests/test_data_contracts.py
+110 tests/test_release_gate.py
+
+The repository was under parallel integration. The root agent owns the single final full-suite gate.
+
+2026-10-02 release-target manifest and deterministic contract-binding verification
+
+Target tests
+command scope: tests/test_data_contracts.py tests/test_release_gate.py
+result: 26 passed in 3.05s
+capsule_id: 20261002-103426668-7c7bf160
+artifact_sha256: 81d584c3906bbdb3bfa00410b2caaa88c07d79d73dc5ba8a3e72da82de2e1217
+manual_inspection_required: false
+hash_verified: true
+all_detected_risk_lines_captured: true
+
+Ruff target gate
+result: All checks passed!
+capsule_id: 20261002-103426668-0e6dac35
+artifact_sha256: af352a86840ad0af3d37ea0d9197f868363a6dac6b1c2ef5d2722f6b41d2d9af
+manual_inspection_required: false
+hash_verified: true
+all_detected_risk_lines_captured: true
+
+Basedpyright target gate
+result: 0 errors, 0 warnings, 0 notes
+capsule_id: 20261002-103426692-46d4984e
+artifact_sha256: 6851c16b34e045435cd01974bb0fdc7298759457a68f2f6739f1b742245a5341
+manual_inspection_required: false
+hash_verified: true
+all_detected_risk_lines_captured: true
+
+Pure LOC
+196 src/ax_starter/data_contracts.py
+219 src/ax_starter/release_gate.py
+
+The release manifest binds declared version and digest identifiers; it does not authenticate external evidence.
+The repository was under parallel integration. The root agent owns the single final full-suite gate.

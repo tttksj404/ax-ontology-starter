@@ -1,0 +1,551 @@
+{
+  "$defs": {
+    "Access": {
+      "additionalProperties": false,
+      "properties": {
+        "tenant": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Tenant",
+          "type": "string"
+        },
+        "groups": {
+          "default": [],
+          "items": {
+            "maxLength": 96,
+            "minLength": 1,
+            "pattern": "^[\\w.-]+$",
+            "type": "string"
+          },
+          "title": "Groups",
+          "type": "array",
+          "uniqueItems": true
+        },
+        "sensitivity": {
+          "$ref": "#/$defs/Sensitivity",
+          "default": 3
+        },
+        "purposes": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Purpose"
+          },
+          "title": "Purposes",
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "tenant"
+      ],
+      "title": "Access",
+      "type": "object"
+    },
+    "ActionType": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "handler": {
+          "const": "set_status",
+          "title": "Handler",
+          "type": "string"
+        },
+        "object_type": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Object Type",
+          "type": "string"
+        },
+        "property": {
+          "const": "status",
+          "title": "Property",
+          "type": "string"
+        },
+        "transitions": {
+          "items": {
+            "$ref": "#/$defs/Transition"
+          },
+          "maxItems": 20,
+          "minItems": 1,
+          "title": "Transitions",
+          "type": "array"
+        },
+        "requires_approval": {
+          "const": true,
+          "default": true,
+          "title": "Requires Approval",
+          "type": "boolean"
+        },
+        "reversible": {
+          "const": true,
+          "default": true,
+          "title": "Reversible",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "handler",
+        "object_type",
+        "property",
+        "transitions"
+      ],
+      "title": "ActionType",
+      "type": "object"
+    },
+    "Document": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "object_ids": {
+          "items": {
+            "maxLength": 96,
+            "minLength": 1,
+            "pattern": "^[\\w.-]+$",
+            "type": "string"
+          },
+          "maxItems": 30,
+          "minItems": 1,
+          "title": "Object Ids",
+          "type": "array"
+        },
+        "title": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 16000,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "source_uri": {
+          "maxLength": 300,
+          "minLength": 1,
+          "title": "Source Uri",
+          "type": "string"
+        },
+        "source_version": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Source Version",
+          "type": "string"
+        },
+        "access": {
+          "$ref": "#/$defs/Access"
+        },
+        "valid_until": {
+          "format": "date-time",
+          "title": "Valid Until",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "object_ids",
+        "title",
+        "text",
+        "source_uri",
+        "source_version",
+        "access",
+        "valid_until"
+      ],
+      "title": "Document",
+      "type": "object"
+    },
+    "Entity": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "type": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Type",
+          "type": "string"
+        },
+        "label": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Label",
+          "type": "string"
+        },
+        "access": {
+          "$ref": "#/$defs/Access"
+        },
+        "properties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/PropertyValue"
+          },
+          "maxItems": 40,
+          "title": "Properties"
+        },
+        "version": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        },
+        "source": {
+          "maxLength": 300,
+          "minLength": 1,
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "label",
+        "access",
+        "properties",
+        "source"
+      ],
+      "title": "Entity",
+      "type": "object"
+    },
+    "Link": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "type": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Type",
+          "type": "string"
+        },
+        "source_id": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "target_id": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Target Id",
+          "type": "string"
+        },
+        "access": {
+          "$ref": "#/$defs/Access"
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "source_id",
+        "target_id",
+        "access"
+      ],
+      "title": "Link",
+      "type": "object"
+    },
+    "LinkType": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "source_type": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Source Type",
+          "type": "string"
+        },
+        "target_type": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Target Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "source_type",
+        "target_type"
+      ],
+      "title": "LinkType",
+      "type": "object"
+    },
+    "ObjectType": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "Label",
+          "type": "string"
+        },
+        "properties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/PropertySpec"
+          },
+          "minItems": 1,
+          "maxItems": 40,
+          "title": "Properties"
+        },
+        "minimum_sensitivity": {
+          "$ref": "#/$defs/Sensitivity",
+          "default": 3
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "properties"
+      ],
+      "title": "ObjectType",
+      "type": "object"
+    },
+    "PropertySpec": {
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Key",
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/$defs/ValueKind"
+        },
+        "required": {
+          "default": true,
+          "title": "Required",
+          "type": "boolean"
+        },
+        "sensitivity": {
+          "$ref": "#/$defs/Sensitivity",
+          "default": 3
+        }
+      },
+      "required": [
+        "key",
+        "kind"
+      ],
+      "title": "PropertySpec",
+      "type": "object"
+    },
+    "PropertyValue": {
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Key",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "boolean"
+            }
+          ],
+          "title": "Value"
+        }
+      },
+      "required": [
+        "key",
+        "value"
+      ],
+      "title": "PropertyValue",
+      "type": "object"
+    },
+    "Purpose": {
+      "enum": [
+        "operations",
+        "audit"
+      ],
+      "title": "Purpose",
+      "type": "string"
+    },
+    "Sensitivity": {
+      "enum": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "title": "Sensitivity",
+      "type": "integer"
+    },
+    "Transition": {
+      "additionalProperties": false,
+      "properties": {
+        "before": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Before",
+          "type": "string"
+        },
+        "after": {
+          "maxLength": 96,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "After",
+          "type": "string"
+        }
+      },
+      "required": [
+        "before",
+        "after"
+      ],
+      "title": "Transition",
+      "type": "object"
+    },
+    "ValueKind": {
+      "enum": [
+        "text",
+        "number",
+        "boolean"
+      ],
+      "title": "ValueKind",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "maxLength": 96,
+      "minLength": 1,
+      "pattern": "^[\\w.-]+$",
+      "title": "Id",
+      "type": "string"
+    },
+    "version": {
+      "maxLength": 96,
+      "minLength": 1,
+      "pattern": "^[\\w.-]+$",
+      "title": "Version",
+      "type": "string"
+    },
+    "description": {
+      "maxLength": 500,
+      "minLength": 1,
+      "title": "Description",
+      "type": "string"
+    },
+    "object_types": {
+      "items": {
+        "$ref": "#/$defs/ObjectType"
+      },
+      "maxItems": 50,
+      "minItems": 1,
+      "title": "Object Types",
+      "type": "array"
+    },
+    "link_types": {
+      "items": {
+        "$ref": "#/$defs/LinkType"
+      },
+      "maxItems": 50,
+      "title": "Link Types",
+      "type": "array"
+    },
+    "action_types": {
+      "items": {
+        "$ref": "#/$defs/ActionType"
+      },
+      "maxItems": 30,
+      "title": "Action Types",
+      "type": "array"
+    },
+    "objects": {
+      "items": {
+        "$ref": "#/$defs/Entity"
+      },
+      "maxItems": 5000,
+      "minItems": 1,
+      "title": "Objects",
+      "type": "array"
+    },
+    "links": {
+      "items": {
+        "$ref": "#/$defs/Link"
+      },
+      "maxItems": 20000,
+      "title": "Links",
+      "type": "array"
+    },
+    "documents": {
+      "items": {
+        "$ref": "#/$defs/Document"
+      },
+      "maxItems": 5000,
+      "title": "Documents",
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "description",
+    "object_types",
+    "link_types",
+    "action_types",
+    "objects",
+    "links",
+    "documents"
+  ],
+  "title": "DomainPack",
+  "type": "object"
+}

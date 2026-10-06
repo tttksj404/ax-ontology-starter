@@ -1,0 +1,158 @@
+{
+  "schema": "ax-wiki-independent-review/v1",
+  "revision": 3,
+  "verdict": "PASS",
+  "report": {
+    "path": "docs/evidence/v0.3.0/revision-3/independent-review.md",
+    "sha256": "7fd740cb62f33802a5295dde06f53365df4eeb85e1b387716e0a07c85107288f"
+  },
+  "source_binding": {
+    "scope": "the 149 paths enumerated by docs/evidence/v0.3.0/revision-3/tested-source-manifest.json: pyproject.toml + uv.lock + 2 check scripts + src/ax_starter/**/*.py + tests/**/*.py",
+    "file_count": 149,
+    "aggregate_algorithm": "sha256(utf8(join LF sorted(path NUL file_sha256 NUL bytes)))",
+    "before_sha256": "90ed16b3908e3056090c9670f94b0bb42b5e0dfd5eaf2fb660ff0a9cdaea5b6a",
+    "after_sha256": "90ed16b3908e3056090c9670f94b0bb42b5e0dfd5eaf2fb660ff0a9cdaea5b6a",
+    "tested_source_manifest": {
+      "path": "docs/evidence/v0.3.0/revision-3/tested-source-manifest.json",
+      "file_count": 149,
+      "sha256": "a82dab5666b1167e0f05bcd57853646823f42c4e065710bcd8696c4f484621d8",
+      "mismatch_count": 0
+    },
+    "documentation_binding": {
+      "scope": "docs/LLM_WIKI_GUIDE.md + docs/SECURITY_MODEL.md + docs/ARCHITECTURE.md + docs/OPERATIONS.md + docs/V03_VERIFICATION.md + docs/WORK_PLAN_v0.3.md",
+      "file_count": 6,
+      "before_sha256": "f199b5c13fe68dfa91fc119f32b00258473aecd6bd61bbe164990fd6fa8bec17",
+      "after_sha256": "f199b5c13fe68dfa91fc119f32b00258473aecd6bd61bbe164990fd6fa8bec17"
+    }
+  },
+  "audit_inputs": [
+    {
+      "path": ".omx/artifacts/wiki-final-audit-result.txt",
+      "sha256": "2c7d161e56d123ebafdba75cd217ae1189c60e7560b757647c0a5261f5e3fbcd"
+    },
+    {
+      "path": ".omx/artifacts/wiki-design-retry-result.txt",
+      "sha256": "a5b2c515d37fc2a3c0fcadfc42e9cb592b9256927dfdf0dd34d90d212b6c8669"
+    }
+  ],
+  "blocking_findings": [],
+  "closed_findings": [
+    {
+      "id": "wiki-link-acl-scope-gap",
+      "severity": "blocker",
+      "status": "closed",
+      "evidence": "Every stored bound object must be reproducible through scope_ids for the current actor and stored query on draft, publish, head, page, index, query, lint, and export paths.",
+      "counterexample": {
+        "marker": "LINK_ACL_COUNTEREXAMPLE_CLOSED",
+        "mock_free": true,
+        "observed": {
+          "view_draft": 404,
+          "publish": 404,
+          "index_count": 0,
+          "page": 404,
+          "export": 404,
+          "query_page_count": 0,
+          "lint_count": 0
+        }
+      }
+    },
+    {
+      "id": "wiki-link-sensitivity-floor",
+      "severity": "blocker",
+      "status": "closed",
+      "evidence": "The current visible relationship sensitivity participates in compile, current-read, and historical-head access floors.",
+      "counterexample": {
+        "marker": "LINK_SENSITIVITY_FLOOR_COUNTEREXAMPLE_CLOSED",
+        "mock_free": true,
+        "observed": {
+          "index_count": 0,
+          "page": 404,
+          "export": 404,
+          "query_page_count": 0,
+          "lint_reason": "object_changed",
+          "recovered_classification": "RESTRICTED"
+        }
+      }
+    },
+    {
+      "id": "B1-existing-head-authorization",
+      "status": "closed"
+    },
+    {
+      "id": "B2-anchor-hop-and-current-query-scope",
+      "status": "closed"
+    },
+    {
+      "id": "R3-effective-person-and-human-review",
+      "status": "closed"
+    },
+    {
+      "id": "R4-generation-route-provenance",
+      "status": "closed"
+    },
+    {
+      "id": "R5-derived-output-current-role-and-marker-isolation",
+      "status": "closed"
+    }
+  ],
+  "execution_evidence": [
+    {
+      "check": "link ACL and link sensitivity regression tests with branch coverage",
+      "result": "4 passed",
+      "capsule_id": "20261006-104732213-c334d6dc",
+      "raw_sha256": "50b7125a32f5539468a2b25302df9a2b0a7b23a870453d1775645830e9caf8bf"
+    },
+    {
+      "check": "focused B1 B2 R3 R4 R5 and link tests",
+      "result": "38 passed in 1.77s",
+      "capsule_id": "20261006-105144765-946d9656",
+      "raw_sha256": "7a76b7fb6877eb9a16625479f027049cb77038347296a9bd71093bf5848f246e"
+    },
+    {
+      "check": "full pytest",
+      "result": "421 passed in 21.33s",
+      "capsule_id": "20261006-105154988-fc064b19",
+      "raw_sha256": "51c4cda3329344d54f7e5bc2bb81f47f5b9af61711e6ef5273a6e5fdc61a6a87"
+    },
+    {
+      "check": "ruff lint and format plus basedpyright",
+      "result": "All checks passed; 145 formatted; 0 errors, 0 warnings, 0 notes",
+      "capsule_id": "20261006-105342109-4e773ae4",
+      "raw_sha256": "1ae2a6c0b8e95f407fe961ce5c2ccc8a9391b15f35b1896377616eb0935887ea"
+    }
+  ],
+  "parent_execution_evidence_revalidated": {
+    "verification_index": {
+      "path": "docs/evidence/v0.3.0/revision-3/verification-index.json",
+      "sha256": "972ed8966e867a2d91f0682504bfdf974464864bac6442e1ab73ff5308e8d7f6",
+      "capsule_count": 5,
+      "raw_meta_and_delivered_hash_mismatch_count": 0,
+      "all_exit_zero": true,
+      "all_expect_patterns_present": true,
+      "all_manual_inspection_required_false": true,
+      "all_hash_verified": true,
+      "all_detected_risk_lines_captured": true
+    },
+    "results": {
+      "tests": 421,
+      "formatted_python_files": 145,
+      "type_errors": 0,
+      "type_warnings": 0,
+      "no_excuse_files": 48,
+      "installed_runtime_modules_byte_equal": 70,
+      "local_http_cli_restart_lifecycle": "passed",
+      "synthetic_domain_demos": 3,
+      "real_v02_wheel_db_to_v03_wheel": "passed"
+    }
+  },
+  "policy_assumptions": [
+    "A currently authorized alternative traversal path is sufficient when it reaches the complete stored bound object ID set.",
+    "Historical link ID, type, and exact path identity are not attested by the current contract."
+  ],
+  "watch_limits": [
+    "No automatic stale record or recompile queue is claimed for relationship-only changes.",
+    "Known marker filtering does not authenticate arbitrary metadata, frontmatter, or unknown formats; managed source roles must be registered.",
+    "Enterprise IdP and connectors, live hosted or local LLM quality, KMS, HA or RLS, load, physical WAL backup or downloaded-export erasure, semantic entailment, customer outcomes, and ROI are outside this validation."
+  ],
+  "claim_boundary": "PASS covers the frozen local reference implementation and supplied executable evidence only. It does not include the pending final Opus 5.5 max static audit or authorize release ZIP creation."
+}

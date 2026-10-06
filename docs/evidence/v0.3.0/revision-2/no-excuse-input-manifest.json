@@ -1,0 +1,237 @@
+[
+    {
+        "path":  "src/ax_starter/api.py",
+        "sha256":  "caae75a033caace501110783c73cfb839e235878a6bb090a9b2751fc9e4815f6",
+        "bytes":  9447
+    },
+    {
+        "path":  "src/ax_starter/cli.py",
+        "sha256":  "15afcb04479b2a6e3169cf5e2e5f11c84f8794e1ec024a4690b8d8d2b6571554",
+        "bytes":  3899
+    },
+    {
+        "path":  "src/ax_starter/data_contracts.py",
+        "sha256":  "d4310ef657fc717bf6500ca0bfb8c6f9020d437a3d2504666507d4787e48d63a",
+        "bytes":  9124
+    },
+    {
+        "path":  "src/ax_starter/evidence_policy.py",
+        "sha256":  "873a36c1f5e089f3cf361a08677eb6adb0b2d2f14172e677e4cadd3fa5f09ad1",
+        "bytes":  1404
+    },
+    {
+        "path":  "src/ax_starter/evidence_roles.py",
+        "sha256":  "666e367ce77d1715adfd42276ec167d85a83b82a352d80046f7b80a68bd8c30b",
+        "bytes":  363
+    },
+    {
+        "path":  "src/ax_starter/knowledge.py",
+        "sha256":  "b7f7b900cf3ac786843536aab1d21b809bcae144c174f462cb51f5247223d625",
+        "bytes":  9044
+    },
+    {
+        "path":  "src/ax_starter/knowledge_store.py",
+        "sha256":  "5366da96aec539c6f01ed577ec94b8210eb2432db04de185e939afe38aa5878d",
+        "bytes":  8872
+    },
+    {
+        "path":  "src/ax_starter/store.py",
+        "sha256":  "e8d05107ec2a270da94fe34d529b948292b2edc9a1bc1f214f0fc55579143da4",
+        "bytes":  7514
+    },
+    {
+        "path":  "src/ax_starter/wiki.py",
+        "sha256":  "141e09ca3d4aae4cda9fd9f77a3ea0672965ab4f1b191c0bbea192b2a2c10923",
+        "bytes":  3638
+    },
+    {
+        "path":  "src/ax_starter/wiki_api.py",
+        "sha256":  "873801d801af4d474d88d9f6912c01235cca89500319cc0c51fb434db6939b86",
+        "bytes":  3433
+    },
+    {
+        "path":  "src/ax_starter/wiki_cli.py",
+        "sha256":  "186ffd720c905c1eb1859da953e211431750631baf87f043cca6c8e8414a97b3",
+        "bytes":  2768
+    },
+    {
+        "path":  "src/ax_starter/wiki_compile_flow.py",
+        "sha256":  "f9853c47a7953d6762012df60fae940449632101e4141f43b5b64525fbd66c67",
+        "bytes":  7905
+    },
+    {
+        "path":  "src/ax_starter/wiki_compile_policy.py",
+        "sha256":  "c689127f99529fbe1e1091c1637d6e7d8400820f2afd6874b739d39d3fb88363",
+        "bytes":  3329
+    },
+    {
+        "path":  "src/ax_starter/wiki_compiler.py",
+        "sha256":  "e6c3ce00f120c7cd6d7d90a0e2fc80cb3e7b3fd70cba4961c954f4a1d83d1cd0",
+        "bytes":  2542
+    },
+    {
+        "path":  "src/ax_starter/wiki_contracts.py",
+        "sha256":  "aabc1d0f5dcb81b6ae8be9aea0fac7c638a2c5858f3e459668584c7e95ad399e",
+        "bytes":  8643
+    },
+    {
+        "path":  "src/ax_starter/wiki_demo.py",
+        "sha256":  "c18dc009fc761fca595ec0b6c8b64e22238c3c5d4389165f04a76fb2389a677f",
+        "bytes":  3277
+    },
+    {
+        "path":  "src/ax_starter/wiki_head_policy.py",
+        "sha256":  "5d5852751be6d91e8743db3b207905e2596de9a9f7ad2d7613ed1c8f2e68fc8f",
+        "bytes":  5426
+    },
+    {
+        "path":  "src/ax_starter/wiki_object_policy.py",
+        "sha256":  "e2c88a16f9a19052b3b992aac0c45b17bb2b500ed191cb70ff44ea27a289a877",
+        "bytes":  3930
+    },
+    {
+        "path":  "src/ax_starter/wiki_policy.py",
+        "sha256":  "cdcb0c0f868f2f8fbacf0448803b6a16a7251b543b711ff368182c0b0df39cf5",
+        "bytes":  4808
+    },
+    {
+        "path":  "src/ax_starter/wiki_publish_flow.py",
+        "sha256":  "2c38e98fa893729b0e7d0b4cd143e14e7a5415c0850fd658323d86cdb583868c",
+        "bytes":  7597
+    },
+    {
+        "path":  "src/ax_starter/wiki_query_export.py",
+        "sha256":  "74715aeffe35db28a4e6e4208704b62dc7e7152251a07f4693dc49260ab7a645",
+        "bytes":  6775
+    },
+    {
+        "path":  "src/ax_starter/wiki_query_policy.py",
+        "sha256":  "d3edc3443af1e677406c1a1729ad74ff83dca3eca32215340e31449a9c5d5252",
+        "bytes":  1977
+    },
+    {
+        "path":  "src/ax_starter/wiki_reads.py",
+        "sha256":  "5e66ffd68740f096ccc293b8b048002c288cdbab93fe2ba5ef356b358b2834cb",
+        "bytes":  7574
+    },
+    {
+        "path":  "src/ax_starter/wiki_runtime.py",
+        "sha256":  "1159f73ce9fbfde6060897a8ff088c5ea1d9600bedde9f446c44c3cddef28c71",
+        "bytes":  769
+    },
+    {
+        "path":  "src/ax_starter/wiki_schema.py",
+        "sha256":  "7448a5e08537bbeb999228faf6f8b5d8fc59183d6ea04aa8e5ac1df10e8080c8",
+        "bytes":  8845
+    },
+    {
+        "path":  "src/ax_starter/wiki_source_policy.py",
+        "sha256":  "19ef7aa8f2630c983f4ab8e87143fc06b41d5ce877869defb18c3de0dddbddef",
+        "bytes":  7856
+    },
+    {
+        "path":  "src/ax_starter/wiki_store.py",
+        "sha256":  "638699d53e634ddc9dea213a13c302b5239b028cbf8c25048ac6d5f0d864eb71",
+        "bytes":  8748
+    },
+    {
+        "path":  "tests/test_wiki_api.py",
+        "sha256":  "43553aa1ca1830567dc928a9918e3578aa0ea9f718ea423703f9e34cc35ed6c4",
+        "bytes":  5470
+    },
+    {
+        "path":  "tests/test_wiki_audit_boundaries.py",
+        "sha256":  "5ec7a1231e205ae3fe3786e6038bf3731c8374a539fd361ad8df15976fc8f1c8",
+        "bytes":  9848
+    },
+    {
+        "path":  "tests/test_wiki_cli.py",
+        "sha256":  "a814056256c8fb601b33bc2bec32bde6afa6772a5552cd2afe6f0bcc06e05202",
+        "bytes":  980
+    },
+    {
+        "path":  "tests/test_wiki_compiler.py",
+        "sha256":  "7c8248aa30402ccf997ee427ee1c9aa7c4c92fe025597a2f37112c618a5c77df",
+        "bytes":  3861
+    },
+    {
+        "path":  "tests/test_wiki_core_contracts.py",
+        "sha256":  "0a288a10da46bc16b7a2aad959ee7ad2e2138b968f715c354461a6edeae1ebb9",
+        "bytes":  3649
+    },
+    {
+        "path":  "tests/test_wiki_core_service.py",
+        "sha256":  "f4777344266636ed67aa523ec6ef8a25a6b704ddec7f87e1b28855a56e5f09c1",
+        "bytes":  7684
+    },
+    {
+        "path":  "tests/test_wiki_core_visibility.py",
+        "sha256":  "800681741f69a960043489c72d2c3b9a952c82a527f1360e6335b21d49c72075",
+        "bytes":  9282
+    },
+    {
+        "path":  "tests/test_wiki_demo.py",
+        "sha256":  "5d6ac6df93f0ea189275b63eddfa90157961f7dff0e60f7ea22a812c6e31a64a",
+        "bytes":  832
+    },
+    {
+        "path":  "tests/test_wiki_export_safety.py",
+        "sha256":  "2e3ea06cabfd85c286ac46e44cf83cb3d4d81d2b325a4ab4445d2210df95991d",
+        "bytes":  1434
+    },
+    {
+        "path":  "tests/test_wiki_lifecycle_invalidation.py",
+        "sha256":  "125ae9ecf9d460c0c5759e515cfd63395f61260d0d050534f57fd1184707fd8b",
+        "bytes":  10931
+    },
+    {
+        "path":  "tests/test_wiki_lifecycle_schema.py",
+        "sha256":  "4d3864325a7998865fb5eb24f41c823911d7ce12672ae8ea47b51ddc57c800e6",
+        "bytes":  1361
+    },
+    {
+        "path":  "tests/test_wiki_model_wire.py",
+        "sha256":  "20f62411cab2edae221bbeefe7de7cb301c59e1b07ae3ae89667444007ef4793",
+        "bytes":  5649
+    },
+    {
+        "path":  "tests/test_wiki_policy_identity.py",
+        "sha256":  "0e783521216e85f47d2a0e321b22d7ed52cdbe290a1d0096cc18be9dc854a410",
+        "bytes":  4306
+    },
+    {
+        "path":  "tests/test_wiki_policy_sources.py",
+        "sha256":  "4ceb5dbd047e865932b74ad38f25eba490d9f9c98e16e8d2069455bd012f652f",
+        "bytes":  11940
+    },
+    {
+        "path":  "tests/test_wiki_query_boundaries.py",
+        "sha256":  "13af649f1afad1667f7fce49a4d5cdd3b8f4dfdee30ee71e5ac7bd4d69f1e280",
+        "bytes":  6436
+    },
+    {
+        "path":  "tests/test_wiki_scope_bindings.py",
+        "sha256":  "535549b5130e9fa8dfa2b0a11c866802e6255c5e5a0a2e8ae19f95dcf0d3740f",
+        "bytes":  7254
+    },
+    {
+        "path":  "tests/test_wiki_source_roles.py",
+        "sha256":  "5dc4baf1cc48db36f9ffd47396b9eec9228036029d3677a35a3e9a4fb6905c05",
+        "bytes":  5328
+    },
+    {
+        "path":  "tests/v03_runtime_smoke.py",
+        "sha256":  "94efdfdce1b1fd86c00eafb46fa0ae412d1c34995fd0fba52b2b447ed0a97491",
+        "bytes":  4555
+    },
+    {
+        "path":  "tests/v03_wiki_smoke.py",
+        "sha256":  "8a5dc974c6ab98895d48c162631caec1661cd45e9f53758cf9991d28b142ef30",
+        "bytes":  5127
+    },
+    {
+        "path":  "tests/wiki_fixtures.py",
+        "sha256":  "84ea37a8ed6e4be4ab853b1decd5e427fc1ea709c363765547840ef7e84cfd9a",
+        "bytes":  2642
+    }
+]

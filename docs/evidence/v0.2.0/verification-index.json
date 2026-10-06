@@ -1,0 +1,49 @@
+{
+  "schema": "ax-local-verification/v1",
+  "reference_date": "2026-10-02 Asia/Seoul",
+  "test_count": 286,
+  "tests_executed_by": "Codex",
+  "company_validation": false,
+  "records": [
+    {
+      "capsule_id": "20261002-105854320-3b151ae7",
+      "raw_original_sha256": "2e19ba14e714ee9b74e40677e8ee9e630332c00244c5582fdc5e101e4bd319ac",
+      "public_log": "final-checks.txt",
+      "scope": "full lint/format/type/286 tests",
+      "status": "ok",
+      "manual_inspection_required": false,
+      "hash_verified": true,
+      "all_detected_risk_lines_captured": true
+    },
+    {
+      "capsule_id": "20261002-110129537-ca5aaa81",
+      "raw_original_sha256": "5dbe715b0b1e1a2d0c3e16638e78387227350174148df34bb133b42d5217c21a",
+      "public_log": "final-static-checks.txt",
+      "scope": "fe49b12f5e8ef55a0d245481928b62b53032fe6fdd127ae08e75477704ea5195",
+      "status": "ok",
+      "manual_inspection_required": false,
+      "hash_verified": true,
+      "all_detected_risk_lines_captured": true
+    },
+    {
+      "capsule_id": "20261002-110118951-cbc876cc",
+      "raw_original_sha256": "045528edecd37e56dde44fc59e18e49ec87613a36b581c7d72e39d551f8569f4",
+      "public_log": "final-wheel-smoke.txt",
+      "scope": "53ad9cc4ec8f5df20c175ece02bb134d495730f7d9fd265bee50b484b16f75f7",
+      "status": "ok",
+      "manual_inspection_required": false,
+      "hash_verified": true,
+      "all_detected_risk_lines_captured": true
+    },
+    {
+      "capsule_id": "20261002-110338083-b7c2f8d4",
+      "raw_original_sha256": "30ad104502c762a0b3cb6422229ceeab860ad4a2c9bf4f9aa705b774e297b177",
+      "public_log": "final-no-excuse.txt",
+      "scope": "86cb1bead8b4075f1b0b038457e97b16227fd3f75cb21c4af0d7a51e479957de",
+      "status": "ok",
+      "manual_inspection_required": false,
+      "hash_verified": true,
+      "all_detected_risk_lines_captured": true
+    }
+  ]
+}

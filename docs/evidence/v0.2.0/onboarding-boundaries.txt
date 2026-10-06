@@ -1,0 +1,47 @@
+2026-10-02 evidence and integration boundaries
+
+1. Onboarding reports are deterministic diagnostics over supplied fields. They are not a
+   security certification or proof of production operation. OnboardingReport fixes
+   assurance=self_reported_readiness, live_validated=false, and security_certified=false.
+
+2. Unknown deployment, data classification, transfer, access, and process ownership controls
+   block readiness. Other missing controls hold readiness. Rejected approvals remain explicit
+   in rejected_approvals instead of being collapsed into a score.
+
+3. DataContractRegistry is server-owned and resolves by tenant plus contract id. Missing and
+   cross-tenant lookups return the same data_contract_not_found error.
+
+4. collection_source is the registered collection location. DocumentCandidate.origin is the
+   origin claimed for one document, while source_version is the source version observed for
+   that document. expected_content_sha256 is optional, so a reusable contract is not pinned
+   to one document unless the owner explicitly supplies that digest.
+
+   DataContract.access.sensitivity is the maximum classification. minimum_sensitivity is the
+   classification floor; when omitted, the maximum is also used as the conservative floor.
+   A document may use only a subset of contract access.groups and access.purposes. In the
+   runtime policy, fewer groups or purposes reduce who or which purpose can read the document;
+   adding a group or purpose would broaden access and is rejected.
+
+5. Hash and provenance-claim matching establish content consistency only. The validator does
+   not authenticate the source system or signer; origin_authenticated and
+   provenance_authenticated are fixed false. No live IdP, cloud, or source adapter was added.
+
+6. Safety failure, privilege violation, and deletion omission veto a release independently of
+   quality, refusal, latency, and cost. Synthetic evaluations return
+   synthetic_evaluation_only and can never set eligible_for_field_review=true. Every release
+   result is marked input_derived_recommendation, live_validated=false, and
+   evidence_origin_verified=false; it is not deployment or security certification evidence.
+
+7. SourceSnapshotInput.observed_at is currently retained as caller-supplied snapshot metadata;
+   snapshot_age_seconds can calculate age, but KnowledgeService.import_snapshot does not yet
+   enforce a freshness limit. KnowledgeService applies explicit upsert, retire, tombstone, and
+   ACL-change mutations transactionally. Retrieval enforces each stored document valid_until.
+   DataContract refresh_interval_hours, deletion.retention_days, delete_within_hours,
+   propagate_source_deletion, and reconciliation interval/action are declarations only. No
+   scheduler currently performs refresh, retention deletion, source-deletion propagation, or
+   automatic reconciliation.
+
+8. SourceReference.uri is intended only as a stable, secret-free identifier, never as a signed
+   download URL. Userinfo and decoded authentication-bearing query names are rejected. This
+   parser does not inspect path contents or prove that an otherwise accepted URI contains no
+   confidential business information.

@@ -1,0 +1,56 @@
+OIDC/OAuth JWT access-token verification evidence
+Checked: 2026-10-02 (Asia/Seoul)
+
+1. RFC 9068, JSON Web Token (JWT) Profile for OAuth 2.0 Access Tokens
+   https://www.rfc-editor.org/rfc/rfc9068.html
+   - Section 2.1: signed tokens; RS256 support; explicit at+jwt/application/at+jwt typ.
+   - Section 2.2: iss, exp, aud, sub, client_id, iat, and jti are required.
+   - Section 4: resource server validates typ, exact issuer, audience, signature, and time.
+   - Section 5: explicit typing prevents ID-token/access-token confusion.
+
+1a. RFC 7515, JSON Web Signature
+    https://www.rfc-editor.org/rfc/rfc7515.html
+    - Section 4: JOSE Header Parameter names must be unique; this implementation rejects
+      duplicates rather than accepting a parser's last value.
+    - typ is a media type; media type and subtype comparisons are case-insensitive.
+
+2. RFC 9700, Best Current Practice for OAuth 2.0 Security
+   https://www.rfc-editor.org/rfc/rfc9700.html
+   - Sections 2.3 and 4.10.2: resource servers verify audience restriction.
+   - Section 4.9.3: access tokens are sensitive secrets and must not be logged in plaintext.
+
+3. PyJWT 2.15.1 official documentation
+   https://pyjwt.readthedocs.io/en/latest/usage.html
+   https://pyjwt.readthedocs.io/en/latest/api.html
+   - algorithms must be a fixed application allowlist, never derived from attacker headers.
+   - decode verifies signatures and accepts explicit issuer/audience/required-claim options.
+   - strict_aud requires one audience value and exact audience matching.
+
+4. PyPI package provenance
+   https://pypi.org/project/PyJWT/
+   - Latest checked release: 2.15.1, released 2026-09-28.
+   - Python >=3.9; official `crypto` extra available; trusted-publishing provenance present.
+   - Selected dependency contract: PyJWT[crypto]>=2.15.1,<3.
+
+Implemented trust boundary
+- Only configured exact HTTPS issuers and API audiences are trusted.
+- Only pinned public JWKS supplied in the identity registry is used; there is no discovery or URL fetch.
+- Only RS256 is allowed. kid selects one unique configured RSA key of 2048..8192 bits with
+  exponent 65537.
+- jku, jwk, x5u, x5c, crit, cty, zip, b64, unknown headers, ID-token typ, and other
+  algorithms are rejected.
+- Header and payload duplicate JSON members are rejected; aud is one exact API audience.
+- NumericDate claims are strict bounded integers; issuer configuration bounds token age and
+  lifetime.
+- Token tenant/groups/roles/clearance claims are ignored for authorization.
+- (issuer, subject) must resolve to an enabled user/service server binding whose client_id and
+  server Principal kind match the configured contract.
+- Authentication mode is explicit; JWT-shaped failures in both mode do not fall back to
+  opaque hashes.
+- Identity files remain reloadable per request so binding/key removal takes effect on the next request.
+- JWT credentials use an 8192-character bound distinct from the legacy opaque 512-character bound.
+
+Evidence limits
+- Tests use generated synthetic RSA keys and credentials only.
+- No commercial SSO login, live IdP discovery, JWKS endpoint, MFA, or production key rotation was tested.
+- Sender-constrained access tokens (mTLS/DPoP) and token replay storage are outside this increment.

@@ -1,0 +1,259 @@
+{
+  "id": "hr-demo",
+  "version": "1.0.0",
+  "description": "입사 서류 검토: 실제 개인정보가 없는 합성 도메인팩",
+  "object_types": [
+    {
+      "id": "OnboardingCase",
+      "label": "입사 서류 검토",
+      "properties": [
+        {
+          "key": "status",
+          "kind": "text",
+          "required": true,
+          "sensitivity": 3
+        },
+        {
+          "key": "summary",
+          "kind": "text",
+          "required": true,
+          "sensitivity": 3
+        }
+      ],
+      "minimum_sensitivity": 3
+    },
+    {
+      "id": "Procedure",
+      "label": "업무 절차",
+      "properties": [
+        {
+          "key": "summary",
+          "kind": "text",
+          "required": true,
+          "sensitivity": 3
+        }
+      ],
+      "minimum_sensitivity": 3
+    }
+  ],
+  "link_types": [
+    {
+      "id": "governed_by",
+      "source_type": "OnboardingCase",
+      "target_type": "Procedure"
+    }
+  ],
+  "action_types": [
+    {
+      "id": "mark_reviewed",
+      "handler": "set_status",
+      "object_type": "OnboardingCase",
+      "property": "status",
+      "transitions": [
+        {
+          "before": "submitted",
+          "after": "reviewed"
+        }
+      ],
+      "requires_approval": true,
+      "reversible": true
+    }
+  ],
+  "objects": [
+    {
+      "id": "request-1",
+      "type": "OnboardingCase",
+      "label": "입사 서류 검토",
+      "access": {
+        "tenant": "acme",
+        "groups": [
+          "hr"
+        ],
+        "sensitivity": 3,
+        "purposes": [
+          "audit",
+          "operations"
+        ]
+      },
+      "properties": [
+        {
+          "key": "status",
+          "value": "submitted"
+        },
+        {
+          "key": "summary",
+          "value": "합성 업무 사례"
+        }
+      ],
+      "version": 1,
+      "source": "synthetic:request-1"
+    },
+    {
+      "id": "procedure-1",
+      "type": "Procedure",
+      "label": "표준 운영 절차",
+      "access": {
+        "tenant": "acme",
+        "groups": [
+          "hr"
+        ],
+        "sensitivity": 3,
+        "purposes": [
+          "audit",
+          "operations"
+        ]
+      },
+      "properties": [
+        {
+          "key": "summary",
+          "value": "검토 절차"
+        }
+      ],
+      "version": 1,
+      "source": "synthetic:procedure-1"
+    },
+    {
+      "id": "beta-request",
+      "type": "OnboardingCase",
+      "label": "다른 테넌트의 합성 요청",
+      "access": {
+        "tenant": "beta",
+        "groups": [
+          "hr"
+        ],
+        "sensitivity": 3,
+        "purposes": [
+          "audit",
+          "operations"
+        ]
+      },
+      "properties": [
+        {
+          "key": "status",
+          "value": "submitted"
+        },
+        {
+          "key": "summary",
+          "value": "합성 업무 사례"
+        }
+      ],
+      "version": 1,
+      "source": "synthetic:beta"
+    },
+    {
+      "id": "restricted-case",
+      "type": "OnboardingCase",
+      "label": "접근 제한 합성 기록",
+      "access": {
+        "tenant": "acme",
+        "groups": [
+          "private-board"
+        ],
+        "sensitivity": 3,
+        "purposes": [
+          "audit",
+          "operations"
+        ]
+      },
+      "properties": [
+        {
+          "key": "status",
+          "value": "submitted"
+        },
+        {
+          "key": "summary",
+          "value": "합성 업무 사례"
+        }
+      ],
+      "version": 1,
+      "source": "synthetic:restricted"
+    }
+  ],
+  "links": [
+    {
+      "id": "request-policy",
+      "type": "governed_by",
+      "source_id": "request-1",
+      "target_id": "procedure-1",
+      "access": {
+        "tenant": "acme",
+        "groups": [
+          "hr"
+        ],
+        "sensitivity": 3,
+        "purposes": [
+          "audit",
+          "operations"
+        ]
+      }
+    }
+  ],
+  "documents": [
+    {
+      "id": "sop-1",
+      "object_ids": [
+        "procedure-1"
+      ],
+      "title": "검토 운영 절차",
+      "text": "입사서류는 필수 서류와 제출 상태를 확인하고 reviewed 상태로 기록합니다. 채용·인사평가의 최종 결정은 담당자가 수행합니다.",
+      "source_uri": "synthetic://sop/review",
+      "source_version": "1",
+      "access": {
+        "tenant": "acme",
+        "groups": [
+          "hr"
+        ],
+        "sensitivity": 3,
+        "purposes": [
+          "audit",
+          "operations"
+        ]
+      },
+      "valid_until": "2027-10-01T09:13:25.986513Z"
+    },
+    {
+      "id": "beta-doc",
+      "object_ids": [
+        "beta-request"
+      ],
+      "title": "검토 절차",
+      "text": "BETA_SENTINEL 합성 타사 기밀",
+      "source_uri": "synthetic://beta",
+      "source_version": "1",
+      "access": {
+        "tenant": "beta",
+        "groups": [
+          "hr"
+        ],
+        "sensitivity": 3,
+        "purposes": [
+          "audit",
+          "operations"
+        ]
+      },
+      "valid_until": "2027-10-01T09:13:25.986513Z"
+    },
+    {
+      "id": "restricted-doc",
+      "object_ids": [
+        "restricted-case"
+      ],
+      "title": "검토 절차",
+      "text": "RESTRICTED_SENTINEL 합성 접근제한 기록",
+      "source_uri": "synthetic://restricted",
+      "source_version": "1",
+      "access": {
+        "tenant": "acme",
+        "groups": [
+          "private-board"
+        ],
+        "sensitivity": 3,
+        "purposes": [
+          "audit",
+          "operations"
+        ]
+      },
+      "valid_until": "2027-10-01T09:13:25.986513Z"
+    }
+  ]
+}

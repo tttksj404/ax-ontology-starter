@@ -1,0 +1,54 @@
+{
+  "source": "synthetic:three-cases",
+  "synthetic": true,
+  "events": [
+    {
+      "case_id": "case-0",
+      "step_id": "step-1",
+      "owner": "clerk",
+      "received_at": "2026-10-01T00:00:00Z",
+      "started_at": "2026-10-01T00:02:00Z",
+      "completed_at": "2026-10-01T00:07:00Z"
+    },
+    {
+      "case_id": "case-0",
+      "step_id": "step-2",
+      "owner": "reviewer",
+      "received_at": "2026-10-01T00:07:00Z",
+      "started_at": "2026-10-01T00:27:00Z",
+      "completed_at": "2026-10-01T00:32:00Z"
+    },
+    {
+      "case_id": "case-1",
+      "step_id": "step-1",
+      "owner": "clerk",
+      "received_at": "2026-10-01T01:00:00Z",
+      "started_at": "2026-10-01T01:02:00Z",
+      "completed_at": "2026-10-01T01:07:00Z"
+    },
+    {
+      "case_id": "case-1",
+      "step_id": "step-2",
+      "owner": "reviewer",
+      "received_at": "2026-10-01T01:07:00Z",
+      "started_at": "2026-10-01T01:27:00Z",
+      "completed_at": "2026-10-01T01:32:00Z"
+    },
+    {
+      "case_id": "case-2",
+      "step_id": "step-1",
+      "owner": "clerk",
+      "received_at": "2026-10-01T02:00:00Z",
+      "started_at": "2026-10-01T02:02:00Z",
+      "completed_at": "2026-10-01T02:07:00Z"
+    },
+    {
+      "case_id": "case-2",
+      "step_id": "step-2",
+      "owner": "reviewer",
+      "received_at": "2026-10-01T02:07:00Z",
+      "started_at": "2026-10-01T02:27:00Z",
+      "completed_at": "2026-10-01T02:32:00Z"
+    }
+  ]
+}

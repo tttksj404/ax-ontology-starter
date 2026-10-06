@@ -1,0 +1,9 @@
+{
+  "mode": "offline",
+  "endpoint": null,
+  "model": null,
+  "approved_hosts": [],
+  "egress_approved": false,
+  "minimum_query_sensitivity": 3,
+  "max_prompt_bytes": 64000
+}

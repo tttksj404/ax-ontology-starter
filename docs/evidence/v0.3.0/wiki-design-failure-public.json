@@ -1,0 +1,13 @@
+{
+    "schema":  "ax-advisor-failure/v1",
+    "model_requested":  "claude-opus-5-5",
+    "effort_requested":  "max",
+    "model_response_confirmed":  false,
+    "is_error":  true,
+    "terminal_reason":  "api_error",
+    "result":  "Request timed out",
+    "raw_sha256":  "adc52dec787ddaf5c1c776b263ab10c4ccc795fd5b7d2ccaa2ce0cf65f1c8a19",
+    "prompt_sha256":  "927d82896ecb2f5591c6c1c3421693ef8b5b6c971b90d961656236a75e74a218",
+    "duration_ms":  3681149,
+    "scope":  "Failed design call. No design or audit PASS."
+}

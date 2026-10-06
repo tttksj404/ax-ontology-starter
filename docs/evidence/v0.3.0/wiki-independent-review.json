@@ -1,0 +1,73 @@
+{
+    "schema":  "ax-independent-review/v1",
+    "verdict":  "PASS",
+    "architectural_status":  "CLEAR",
+    "scope":  "Local reference implementation, read-only independent source/counterexample review and actual synthetic execution.",
+    "reviewer_model":  "gpt-5.6-sol",
+    "reasoning_effort":  "xhigh",
+    "publication":  "Parent published the original read-only reviewer findings; reviewer did not modify implementation.",
+    "test_count":  394,
+    "wiki_test_count":  69,
+    "counterexample_count":  22,
+    "parent_format_scope":  "src/tests: 137 files",
+    "independent_format_scope":  "ruff format --check .: 192 discovered files, not an assertion about all private files",
+    "tested_source_manifest_sha256":  "159a6beab10384be3ec30e19872db692cf0e47e3ac153f4f9c71b0ad3ae49571",
+    "reviewed_verification_index":  "docs/evidence/v0.3.0/independent-reviewed-verification-index.json",
+    "reviewed_verification_index_sha256":  "d576d13c25a02cbfa3f97c7d66c5b5094d6fa2104741d837e2bd20617f016eee",
+    "runtime_subset_canonical_sha256":  "4d53f3c4bd13196bf31eee6a911669cb69261c88dfaa6812ff5c11c3398cb066",
+    "tests_subset_canonical_sha256":  "e13430402df12ece49d44c6dc4218533bf0a5b6c262ad1624180d41dc7d665a7",
+    "subset_hash_encoding":  "Sorted path|bytes|sha256 lines with LF; canonical aggregate, not a separate JSON file hash.",
+    "wheel_sha256":  "d3814aba58f36a07ab50f8fb91af292cb9769e44395fbfbe273e270fef5e8c1f",
+    "static_opus_final_audit":  "pending",
+    "live_validated":  false,
+    "evidence":  [
+                     {
+                         "capsule_id":  "20261002-165016653-38bd73d4",
+                         "exit_code":  0,
+                         "raw_sha256":  "68371e32ca5128faf637e67c3f74f2f584ec27356709a6a386b3fa3e78009b75",
+                         "raw_bytes":  204,
+                         "hash_verified":  true,
+                         "manual_inspection_required":  false
+                     },
+                     {
+                         "capsule_id":  "20261002-165026256-c5e9b10f",
+                         "exit_code":  0,
+                         "raw_sha256":  "4af0f70f9819d19d43119126704ca49cb0ce9dbc83518b51a1cbe9e6a3d81501",
+                         "raw_bytes":  1018,
+                         "hash_verified":  true,
+                         "manual_inspection_required":  false
+                     },
+                     {
+                         "capsule_id":  "20261002-165016832-e817b1f8",
+                         "exit_code":  0,
+                         "raw_sha256":  "af352a86840ad0af3d37ea0d9197f868363a6dac6b1c2ef5d2722f6b41d2d9af",
+                         "raw_bytes":  42,
+                         "hash_verified":  true,
+                         "manual_inspection_required":  false
+                     },
+                     {
+                         "capsule_id":  "20261002-165016863-5e7d7055",
+                         "exit_code":  0,
+                         "raw_sha256":  "761af5f8d63fc9f0ff60ef75a04ea33860e4f6c21e92614980290eab77eef224",
+                         "raw_bytes":  60,
+                         "hash_verified":  true,
+                         "manual_inspection_required":  false
+                     },
+                     {
+                         "capsule_id":  "20261002-165016874-fb19b06a",
+                         "exit_code":  0,
+                         "raw_sha256":  "6851c16b34e045435cd01974bb0fdc7298759457a68f2f6739f1b742245a5341",
+                         "raw_bytes":  64,
+                         "hash_verified":  true,
+                         "manual_inspection_required":  false
+                     },
+                     {
+                         "capsule_id":  "20261002-165115129-6e03e168",
+                         "exit_code":  0,
+                         "raw_sha256":  "0f448881c630377ed04993adaea0c4c306816a0cdeb9d865d2faffa567eea529",
+                         "raw_bytes":  226,
+                         "hash_verified":  true,
+                         "manual_inspection_required":  false
+                     }
+                 ]
+}

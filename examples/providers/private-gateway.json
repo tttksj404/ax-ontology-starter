@@ -1,0 +1,11 @@
+{
+  "mode": "private_gateway",
+  "endpoint": "https://ai-gateway.example.com/v1",
+  "model": "replace-with-approved-deployment",
+  "approved_hosts": [
+    "ai-gateway.example.com"
+  ],
+  "egress_approved": false,
+  "minimum_query_sensitivity": 3,
+  "max_prompt_bytes": 64000
+}

@@ -1,0 +1,9 @@
+{
+  "mode": "local",
+  "endpoint": "http://127.0.0.1:11434",
+  "model": "replace-with-installed-model",
+  "approved_hosts": [],
+  "egress_approved": false,
+  "minimum_query_sensitivity": 3,
+  "max_prompt_bytes": 64000
+}

@@ -1,0 +1,19 @@
+2026-10-02 TDD red evidence
+
+1) uv run pytest -q tests/test_knowledge_migration.py
+FAILED test_v1_restart_migrates_documents_and_preserves_operational_state
+assert None == ('2',)
+1 failed in 0.19s
+
+2) uv run pytest -q tests/test_knowledge_actions.py
+FAILED test_simulation_is_blocked_when_evidence_is_tombstoned - DID NOT RAISE AXError
+FAILED test_repeated_approval_revalidates_revoked_evidence - DID NOT RAISE AXError
+FAILED test_approval_is_blocked_when_evidence_acl_changes - DID NOT RAISE AXError
+FAILED test_approval_is_blocked_when_source_version_changes - DID NOT RAISE AXError
+FAILED test_execution_reads_identity_directory_once - assert 2 == 1
+5 failed, 1 passed in 0.42s
+
+3) uv run pytest -q tests/test_knowledge.py
+All eight scenarios failed at KnowledgeService.apply/import_snapshot with:
+ax_starter.common.AXError: knowledge_not_implemented
+8 failed in 0.33s

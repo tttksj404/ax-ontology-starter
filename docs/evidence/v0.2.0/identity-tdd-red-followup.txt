@@ -1,0 +1,49 @@
+OIDC identity follow-up TDD red evidence
+Date: 2026-10-02
+
+Command:
+uv run pytest -q --tb=short tests/test_oidc.py tests/test_oidc_security.py tests/test_oidc_identity_contract.py
+
+Observed output:
+
+=================================== ERRORS ====================================
+_____________________ ERROR collecting tests/test_oidc.py _____________________
+ImportError while importing test module 'C:\Users\SSAFY\Desktop\2�б�\ax-ontology-starter\tests\test_oidc.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_oidc.py:10: in <module>
+    from ax_starter.auth import AuthenticationMode, IdentityBinding, IdentityRegistry, read_identities
+E   ImportError: cannot import name 'AuthenticationMode' from 'ax_starter.auth' (C:\Users\SSAFY\Desktop\2�б�\ax-ontology-starter\src\ax_starter\auth.py)
+________________ ERROR collecting tests/test_oidc_security.py _________________
+ImportError while importing test module 'C:\Users\SSAFY\Desktop\2�б�\ax-ontology-starter\tests\test_oidc_security.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_oidc_security.py:10: in <module>
+    from tests.oidc_fixtures import (
+tests\oidc_fixtures.py:12: in <module>
+    from ax_starter.auth import AuthenticationMode, IdentityRegistry
+E   ImportError: cannot import name 'AuthenticationMode' from 'ax_starter.auth' (C:\Users\SSAFY\Desktop\2�б�\ax-ontology-starter\src\ax_starter\auth.py)
+____________ ERROR collecting tests/test_oidc_identity_contract.py ____________
+ImportError while importing test module 'C:\Users\SSAFY\Desktop\2�б�\ax-ontology-starter\tests\test_oidc_identity_contract.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_oidc_identity_contract.py:7: in <module>
+    from ax_starter.auth import AuthenticationMode, IdentityBinding, IdentityRegistry
+E   ImportError: cannot import name 'AuthenticationMode' from 'ax_starter.auth' (C:\Users\SSAFY\Desktop\2�б�\ax-ontology-starter\src\ax_starter\auth.py)
+=========================== short test summary info ===========================
+ERROR tests/test_oidc.py
+ERROR tests/test_oidc_security.py
+ERROR tests/test_oidc_identity_contract.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 3 errors during collection !!!!!!!!!!!!!!!!!!!
+3 errors in 0.52s
+
+exit code 2

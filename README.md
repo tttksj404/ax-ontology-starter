@@ -256,3 +256,7 @@ uv build
 | 검증과 남은 개선 | [v0.3 검증](docs/V03_VERIFICATION.md), [전달 조건·권고 8개](docs/V03_RELEASE.md), [모델 협업 기록](docs/MODEL_COLLABORATION.md) |
 
 기업 사례와 외부 기술 자료는 문서에 적힌 조사 시점의 공식 출처를 바탕으로 정리했습니다. 실제 IdP·업무 시스템·모델 품질·DLP·보존/리전·부하·KMS·HA·백업 삭제·업무 KPI는 회사 환경에서 검증해야 합니다.
+
+## 경험 기록
+
+이 프로젝트를 왜 시작했는지, 무엇을 직접 판단했는지, 결과가 어땠는지는 [docs/experience-record.md](docs/experience-record.md)에 정리했습니다.
